@@ -20,7 +20,8 @@ public class Principal {
          TeladeLogin tela1 = new TeladeLogin();
          tela1.dispose();
          tela1.setVisible(true);
-         
+
+         /*comentario teste*/
          
          DaoAdicionarProdutos insert = new DaoAdicionarProdutos();
          insert.AdiconarProdutos("vinho", "bebidas", 1100, 150.5);
