@@ -48,7 +48,7 @@ public class TeladeLogin extends javax.swing.JFrame {
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 390, 580, 100));
 
         jPasswordField1.setBorder(null);
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 582, 610, 90));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 580, 600, 90));
 
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);

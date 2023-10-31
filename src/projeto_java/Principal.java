@@ -21,7 +21,7 @@ public class Principal {
          tela1.dispose();
          tela1.setVisible(true);
          
-         /*
+         
          DaoAdicionarProdutos insert = new DaoAdicionarProdutos();
          insert.AdiconarProdutos("vinho", "bebidas", 1100, 150.5);
          
@@ -30,7 +30,7 @@ public class Principal {
          DaoListadeProdutos lista = new DaoListadeProdutos();
          System.out.println(lista.ListaProdutos());
          
-     */
+     
      }
  }
 
