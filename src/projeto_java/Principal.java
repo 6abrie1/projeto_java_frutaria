@@ -8,10 +8,14 @@ import dao.DaoLogin;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import telas.NewClass;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 
 
 import telas.TeladeLogin;
+import telas.TeladePesquisa;
+
 
 public class Principal {
 
@@ -19,7 +23,7 @@ public class Principal {
 
          TeladeLogin tela1 = new TeladeLogin();
          tela1.dispose();
-         tela1.setVisible(true);
+         tela1.setVisible(false);
          
          
          DaoAdicionarProdutos insert = new DaoAdicionarProdutos();
@@ -30,8 +34,20 @@ public class Principal {
          DaoListadeProdutos lista = new DaoListadeProdutos();
          System.out.println(lista.ListaProdutos());
          
+            
+            TeladePesquisa telaPesquisa = new TeladePesquisa();
+            
+            telaPesquisa.setVisible(true);
+
+            
+   
+
+         
+       
+         
      
      }
- }
+     }
+ 
 
 
