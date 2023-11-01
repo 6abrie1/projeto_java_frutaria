@@ -5,6 +5,7 @@ import dao.DaoAdicionarProdutos;
 import dao.DaoCadastro;
 import dao.DaoListadeProdutos;
 import dao.DaoLogin;
+import dao.DaoRemoverProduto;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +21,7 @@ import telas.TeladePesquisa;
 public class Principal {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-
+/*
          TeladeLogin tela1 = new TeladeLogin();
          tela1.dispose();
          tela1.setVisible(false);
@@ -39,10 +40,11 @@ public class Principal {
             
             telaPesquisa.setVisible(true);
 
-            
+            */
    
 
-         
+         DaoRemoverProduto remover = new DaoRemoverProduto();
+         remover.RemoverProdutos("vinho", 7);
        
          
      
