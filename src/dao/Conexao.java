@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class Conexao {
     String url ="jdbc:mysql://localhost:3306/projeto_java";
     String usuario = "root";
-    String senha = "";
+    String senha = "";    
     Connection conexao;
 public Connection getConexao() throws ClassNotFoundException, SQLException {
     Class.forName("com.mysql.cj.jdbc.Driver");
