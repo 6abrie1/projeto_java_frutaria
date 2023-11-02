@@ -1,37 +1,40 @@
 package projeto_java;
 
-import dao.Conexao;
-import dao.DaoAdicionarProdutos;
-import dao.DaoCadastro;
-import dao.DaoListadeProdutos;
-import dao.DaoLogin;
+
+import dao.DaoCliente;
+import dao.DaoProdutos;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import telas.NewClass;
-
-
 import telas.TeladeLogin;
+import teste.Telateste;
+
+
 
 public class Principal {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
-         TeladeLogin tela1 = new TeladeLogin();
-         tela1.dispose();
-         tela1.setVisible(true);
-         
-         
-         DaoAdicionarProdutos insert = new DaoAdicionarProdutos();
-         insert.AdiconarProdutos("vinho", "bebidas", 1100, 150.5);
-         
-         
-         
-         DaoListadeProdutos lista = new DaoListadeProdutos();
-         System.out.println(lista.ListaProdutos());
-         
+       /*
+        DaoProdutos p = new DaoProdutos();
+        System.out.println(p.ListaProdutos());
+        System.out.println(p.PesquisarProdutos("vinho", "bebidas"));
+        p.fecharConexao(); */
+        
+        DaoCliente c = new DaoCliente();
+       
+        //c.AdiconarCliente("gabriel", "4002-8922", "JV9@GMAIL.COM");
+       // c.RemoverCliente("GABRIEL", "JV@GMAIL.COM");
+        //c.fecharConexao();
+        //  p.AdiconarProdutos("uva", "fruta", 10000, 0.80);
+        //  p.RemoverProdutos("biscoito", 9);
+        
+      Telateste t = new Telateste();
+      t.setVisible(true);
+      if(t.getLinhaClicada()!= null){
+        System.out.println(t.getLinhaClicada());
      
      }
- }
+     }
+}
+ 
 
 
