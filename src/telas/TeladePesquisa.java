@@ -1,6 +1,7 @@
 package telas;
 
-import dao.DaoPesquisaProdutos;
+
+import dao.DaoProdutos;
 import javax.swing.DefaultListModel;
 import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
@@ -166,7 +167,7 @@ public class TeladePesquisa extends javax.swing.JFrame {
         modeloLista.clear();
 
         try {
-            DaoPesquisaProdutos pesquisaProdutos = new DaoPesquisaProdutos();
+            DaoProdutos pesquisaProdutos = new DaoProdutos();
             ArrayList<String> resultados = pesquisaProdutos.PesquisarProdutos(nome, categoria);
 
             for (String resultado : resultados) {

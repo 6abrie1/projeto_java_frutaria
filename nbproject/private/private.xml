@@ -3,21 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoLogin.java</file>
+            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/projeto_java/Endereco.java</file>
+            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/projeto_java/Cliente.java</file>
             <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/Conexao.java</file>
             <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/projeto_java/Principal.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoAdicionarProdutos.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/projeto_java/Produto.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoListadeProdutos.java</file>
             <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/telas/TeladePesquisa.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoPesquisaProdutos.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoCadastro.java</file>
+            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoProdutos.java</file>
+            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoCliente.java</file>
             <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/telas/TeladeLogin.java</file>
-=======
-            <file>file:/home/bruno/dev/java/projeto_java_frutaria/src/telas/TeladeLogin.java</file>
-            <file>file:/home/bruno/dev/java/projeto_java_frutaria/src/dao/Conexao.java</file>
->>>>>>> a68edfd4929c2b8c9d3de5d586ac64ae0c1804d6
         </group>
     </open-files>
 </project-private>
