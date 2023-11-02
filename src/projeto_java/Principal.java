@@ -4,6 +4,7 @@ package projeto_java;
 import dao.DaoCliente;
 import dao.DaoProdutos;
 import java.sql.SQLException;
+import telas.TeladeLogin;
 import teste.Telateste;
 
 
@@ -28,9 +29,12 @@ public class Principal {
         
       Telateste t = new Telateste();
       t.setVisible(true);
+      if(t.getLinhaClicada()!= null){
+        System.out.println(t.getLinhaClicada());
      
      }
      }
+}
  
 
 

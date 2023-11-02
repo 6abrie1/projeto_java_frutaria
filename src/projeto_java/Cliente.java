@@ -5,19 +5,23 @@ package projeto_java;
  *
  * @author gabri
  */
-public class Cliente extends Endereco{
+public class Cliente {
   private String nome,email,telefone;
+  private  Endereco endereco;
 
-    public Cliente(String rua, String bairro, String numero, String cep, String complemento) {
-        super(rua, bairro, numero, cep, complemento);
+    public Cliente(String nome, String email, String telefone, Endereco endereco) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.endereco = endereco;
     }
 
-    public Cliente(String nome, String email, String telefone, String rua, String bairro, String numero, String cep, String complemento) {
-        super(rua, bairro, numero, cep, complemento);
+    public Cliente(String nome, String email, String telefone) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
     }
+   
 
 
     public String getNome() {

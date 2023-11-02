@@ -92,7 +92,7 @@ public class DaoCliente {
             
             // Recupere os valores restantes das colunas que você precisa da tabela.
 
-            Cliente cliente = new Cliente(nome, email, telefone, "rua s", "Pindai", "vp2", "6511000", "");//precisar pegar os valores do endereco no tabela de endereco.
+            Cliente cliente = new Cliente(nome, email, telefone);//precisar pegar os valores do endereco no tabela de endereco.
             
             resultadoLista.add(cliente);
         }
