@@ -4,6 +4,7 @@ package projeto_java;
 import dao.DaoCliente;
 import dao.DaoProdutos;
 import java.sql.SQLException;
+import teste.Telateste;
 
 
 
@@ -20,13 +21,13 @@ public class Principal {
         DaoCliente c = new DaoCliente();
        
         //c.AdiconarCliente("gabriel", "4002-8922", "JV9@GMAIL.COM");
-        c.RemoverCliente("GABRIEL", "JV@GMAIL.COM");
-        c.fecharConexao();
+       // c.RemoverCliente("GABRIEL", "JV@GMAIL.COM");
+        //c.fecharConexao();
+        //  p.AdiconarProdutos("uva", "fruta", 10000, 0.80);
+        //  p.RemoverProdutos("biscoito", 9);
         
-      //  p.AdiconarProdutos("uva", "fruta", 10000, 0.80);
-      //  p.RemoverProdutos("biscoito", 9);
-      
-        
+      Telateste t = new Telateste();
+      t.setVisible(true);
      
      }
      }
