@@ -5,6 +5,7 @@ import dao.DaoLogin;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,7 @@ public class TeladeLogin extends javax.swing.JFrame {
      */
     public TeladeLogin() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -45,10 +47,10 @@ public class TeladeLogin extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 390, 580, 100));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 400, 440, 70));
 
         jPasswordField1.setBorder(null);
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 580, 600, 90));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 540, 440, 80));
 
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
@@ -57,7 +59,7 @@ public class TeladeLogin extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 720, 240, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 640, 190, 50));
 
         jButton2.setBorder(null);
         jButton2.setContentAreaFilled(false);
@@ -66,7 +68,7 @@ public class TeladeLogin extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1045, 723, 300, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 640, 240, 40));
 
         jButton3.setBorder(null);
         jButton3.setContentAreaFilled(false);
@@ -75,10 +77,10 @@ public class TeladeLogin extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 823, 620, 120));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 710, 470, 120));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fotos/Recuperação de senha.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fotos/1920 X 1080.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
