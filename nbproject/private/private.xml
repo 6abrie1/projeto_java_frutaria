@@ -3,26 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoLogin.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/model/Produto.java</file>
+            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/TelaClientes.java</file>
             <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/projeto_java/Cliente.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/Conexao.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/model/Endereco.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/model/Vendedor.java</file>
+            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/CadastroClientes.java</file>
+            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/ModificadordeTabelaProdutos.java</file>
+            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/TelaProdutos.java</file>
+            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/ModificadordeTabelaClientes.java</file>
             <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoProdutos.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/model/Adm.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/Telateste.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/model/Venda.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/model/Cliente.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/projeto_java/Endereco.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/projeto_java/Principal.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/model/Pedido.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/projeto_java/Produto.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/telas/Login2.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoCadastro.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/model/Funcionario.java</file>
+            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/CadastroProdutos.java</file>
             <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoCliente.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/ModificadordeTabela.java</file>
             <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/telas/TeladeLogin.java</file>
         </group>
     </open-files>

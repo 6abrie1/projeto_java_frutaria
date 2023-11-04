@@ -49,15 +49,15 @@ public class DaoCliente {
      
      
      
-     public boolean RemoverCliente(String nome,String email){
+     public boolean RemoverCliente(int id){
  
             boolean estado = false;
-        String sql = "DELETE FROM clientes WHERE `email` = ? AND `nome` = ?;";
+        String sql = "DELETE FROM clientes WHERE `id` = ? ;";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             
-            stmt.setString(1, email);
-            stmt.setString(2, nome);
+            stmt.setInt(1, id);
+            
             
             int linhasAfetadas = stmt.executeUpdate();
     
@@ -92,7 +92,7 @@ public class DaoCliente {
             
             // Recupere os valores restantes das colunas que você precisa da tabela.
 
-            Cliente cliente = new Cliente(nome, email, telefone);//precisar pegar os valores do endereco no tabela de endereco.
+            Cliente cliente = new Cliente(id, nome, email, telefone);//precisar pegar os valores do endereco no tabela de endereco.
             
             resultadoLista.add(cliente);
         }

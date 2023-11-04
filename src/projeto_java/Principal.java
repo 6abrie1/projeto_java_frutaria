@@ -5,7 +5,7 @@ import dao.DaoCliente;
 import dao.DaoProdutos;
 import java.sql.SQLException;
 import telas.TeladeLogin;
-import teste.Telateste;
+import teste.TelaProdutos;
 
 
 
@@ -15,11 +15,10 @@ public class Principal {
 
        
     TeladeLogin tela1 = new TeladeLogin();
-    tela1.setVisible(false);
+    tela1.setVisible(true);
     
     
-    Telateste teste = new Telateste();
-    teste.setVisible(true );
+   
     
     
      }

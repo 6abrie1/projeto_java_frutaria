@@ -6,6 +6,7 @@ package projeto_java;
  * @author gabri
  */
 public class Cliente {
+  private int id;
   private String nome,email,telefone;
   private  Endereco endereco;
 
@@ -20,6 +21,29 @@ public class Cliente {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
+    }
+
+    public Cliente(int id, String nome, String email, String telefone, Endereco endereco) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.endereco = endereco;
+    }
+
+    public Cliente(int id, String nome, String email, String telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
    
 
@@ -47,7 +71,9 @@ public class Cliente {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-   
+   public Endereco getEndereco() {
+    return endereco;
+}
    
    
    

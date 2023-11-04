@@ -49,15 +49,15 @@ public class DaoProdutos {
      
      
      
-     public boolean RemoverProdutos(String nome,int id){
+     public boolean RemoverProdutos(int id){
  
             boolean estado = false;
-        String sql = "DELETE FROM produtos WHERE `id` = ? AND `nome` = ?;";
+        String sql = "DELETE FROM produtos WHERE `id` = ? ;";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             
             stmt.setInt(1, id);
-            stmt.setString(2, nome);
+           
             
             int linhasAfetadas = stmt.executeUpdate();
     

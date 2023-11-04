@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import teste.TelaProdutos;
 
 /**
  *
@@ -94,7 +95,7 @@ public class TeladeLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-                try {
+            try {
             DaoLogin login = new DaoLogin();
             // Obtenha o valor do campo de senha (jPasswordField1).
             char[] senhaChar = jPasswordField1.getPassword();
@@ -109,6 +110,12 @@ public class TeladeLogin extends javax.swing.JFrame {
                 "Login realizado com sucesso!",
                 "Login Correto",
                 JOptionPane.INFORMATION_MESSAGE);
+           TelaProdutos telaprod = new TelaProdutos();
+           TeladeLogin telalogin = new TeladeLogin();
+           telaprod.setVisible(true);
+           telalogin.setVisible(false);
+           dispose();
+            
                 
             }else{
                   // Login incorreto - Exibir alerta informativo de falha.
