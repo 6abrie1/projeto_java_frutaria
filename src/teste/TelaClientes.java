@@ -117,6 +117,11 @@ public class TelaClientes extends javax.swing.JFrame {
         jButton1.setText("Pedidos");
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 170, 80));
 
         jButton2.setText("Produtos");
@@ -132,6 +137,11 @@ public class TelaClientes extends javax.swing.JFrame {
         jButton3.setText("Clientes");
         jButton3.setBorder(null);
         jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 333, 160, 80));
 
         jButton4.setText("Cadastro de Funcionario");
@@ -141,6 +151,11 @@ public class TelaClientes extends javax.swing.JFrame {
 
         jButton5.setText("Vendas");
         jButton5.setContentAreaFilled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 463, 180, 80));
 
         jButton6.setBackground(new java.awt.Color(0, 51, 255));
@@ -269,12 +284,33 @@ tela.setVisible(true);
       
 TelaClientes tela = new TelaClientes();
 
-tela.setVisible(false);
-dispose(); 
+        tela.setVisible(false);
+        dispose(); 
 
         TelaProdutos telaP = new TelaProdutos();
         telaP.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    TelaClientes tela = new TelaClientes();
+    tela.setVisible(false);
+    dispose();
+    tela.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+      TelaClientes tela = new TelaClientes();
+     tela.setVisible(false);
+     dispose();
+     
+     TelaVendas telav = new TelaVendas();
+     telav.setVisible(true);
+     
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

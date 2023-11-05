@@ -122,6 +122,11 @@ public class TelaProdutos extends javax.swing.JFrame {
         jButton2.setText("Produtos");
         jButton2.setBorder(null);
         jButton2.setContentAreaFilled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 180, 70));
 
         jButton3.setText("Clientes");
@@ -141,6 +146,11 @@ public class TelaProdutos extends javax.swing.JFrame {
 
         jButton5.setText("Vendas");
         jButton5.setContentAreaFilled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 463, 180, 80));
 
         jButton6.setBackground(new java.awt.Color(0, 51, 255));
@@ -275,6 +285,24 @@ dispose();
        dispose();
        tela.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       TelaProdutos tela = new TelaProdutos();
+       
+       tela.setVisible(false);
+       dispose();
+       tela.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        TelaProdutos tela = new TelaProdutos();
+       
+       tela.setVisible(false);
+       dispose();
+       
+       TelaVendas telaV = new TelaVendas();
+       telaV.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
