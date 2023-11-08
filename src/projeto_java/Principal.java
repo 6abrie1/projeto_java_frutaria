@@ -2,6 +2,7 @@ package projeto_java;
 
 
 
+import FilipeTelas.Login;
 import dao.DaoCliente;
 import dao.DaoProdutos;
 import java.sql.SQLException;
@@ -19,8 +20,8 @@ public class Principal {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
        
-    TeladeLogin tela1 = new TeladeLogin();
-    tela1.setVisible(true);
+    Login telaf = new Login();
+    telaf.setVisible(true);
 
 
     DaoProdutos daoProdutos = new DaoProdutos();
