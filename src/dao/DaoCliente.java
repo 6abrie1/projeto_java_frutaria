@@ -109,18 +109,21 @@ public class DaoCliente {
      public ArrayList<String> PesquisarClientes(String nome, String email) throws SQLException {
         ArrayList<String> resultadoPesquisa = new ArrayList<>();
 
-        String sql = "SELECT `nome`, `email` FROM clientes WHERE `nome` = ? AND `email` = ?;";
+        String sql = "SELECT * FROM clientes WHERE `nome` = ? OR `email` = ?;";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             stmt.setString(1, nome);
             stmt.setString(2, email);
+            
+            
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     // Obtenha os resultados da pesquisa e adicione-os à lista
+                    String idClieString = rs.getString("id");
                     String nomeCliente = rs.getString("nome");
                     String emailClinte = rs.getString("email");
-                    resultadoPesquisa.add("Nome: " + nomeCliente + ", Email: " + emailClinte);
+                    resultadoPesquisa.add("ID"+"Nome: " + nomeCliente + ", Email: " + emailClinte);
                 }
             }
         }

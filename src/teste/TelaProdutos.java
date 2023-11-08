@@ -22,7 +22,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import projeto_java.Produto;
-import static sun.jvm.hotspot.HelloWorld.e;
+
 
 /**
  *
@@ -161,7 +161,7 @@ public class TelaProdutos extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 180, 130, 60));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 130, 60));
 
         jButton7.setBackground(new java.awt.Color(0, 0, 255));
         jButton7.setText("Remover");
@@ -170,7 +170,7 @@ public class TelaProdutos extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 260, 130, 60));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 130, 60));
 
         jButton8.setBackground(new java.awt.Color(0, 51, 255));
         jButton8.setText("Atualizar");
@@ -179,7 +179,7 @@ public class TelaProdutos extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 210, 130, 60));
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 130, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fotos/Produtos.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 1960, -1));

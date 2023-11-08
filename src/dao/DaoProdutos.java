@@ -76,7 +76,7 @@ public class DaoProdutos {
     }
      
      
-     public ArrayList<Produto> ListaProdutos() {
+    public ArrayList<Produto> ListaProdutos() {
          ArrayList<Produto> resultadoLista = new ArrayList<>();
          String sql = "SELECT * FROM produtos;";
 
@@ -109,7 +109,7 @@ public class DaoProdutos {
      public ArrayList<String> PesquisarProdutos(String nome, String categoria) throws SQLException {
         ArrayList<String> resultadoPesquisa = new ArrayList<>();
 
-        String sql = "SELECT `nome`, `categoria` FROM produtos WHERE `nome` = ? AND `categoria` = ?;";
+        String sql = "SELECT * FROM produtos WHERE `nome` = ? OR `categoria` = ?;";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             stmt.setString(1, nome);
@@ -118,9 +118,10 @@ public class DaoProdutos {
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     // Obtenha os resultados da pesquisa e adicione-os à lista
+                    String idProdutoString = rs.getString("id");
                     String nomeProduto = rs.getString("nome");
                     String categoriaProduto = rs.getString("categoria");
-                    resultadoPesquisa.add("Nome: " + nomeProduto + ", Categoria: " + categoriaProduto);
+                    resultadoPesquisa.add("\nID: "+ idProdutoString +"\nNome: " + nomeProduto + "\nCategoria: " + categoriaProduto);
                 }
             }
         }

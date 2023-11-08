@@ -3,16 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/TelaClientes.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/projeto_java/Cliente.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/CadastroClientes.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/ModificadordeTabelaProdutos.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/TelaProdutos.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/ModificadordeTabelaClientes.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoProdutos.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/teste/CadastroProdutos.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/dao/DaoCliente.java</file>
-            <file>file:/C:/Users/gabri/Documents/NetBeansProjects/Projeto_java/src/telas/TeladeLogin.java</file>
+            <file>file:/home/bruno/dev/java/projeto_java_frutaria/src/projeto_java/Principal.java</file>
+            <file>file:/home/bruno/dev/java/projeto_java_frutaria/src/teste/TelaClientes.java</file>
+            <file>file:/home/bruno/dev/java/projeto_java_frutaria/src/dao/DaoProdutos.java</file>
+            <file>file:/home/bruno/dev/java/projeto_java_frutaria/src/teste/TelaProdutos.java</file>
         </group>
     </open-files>
 </project-private>

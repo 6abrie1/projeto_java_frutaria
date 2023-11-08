@@ -23,7 +23,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import projeto_java.Cliente;
 import projeto_java.Produto;
-import static sun.jvm.hotspot.HelloWorld.e;
 
 /**
  *
@@ -112,7 +111,7 @@ public class TelaClientes extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 1050, 900));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 1050, 890));
 
         jButton1.setText("Pedidos");
         jButton1.setBorder(null);
@@ -166,7 +165,7 @@ public class TelaClientes extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 180, 130, 60));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 130, 60));
 
         jButton7.setBackground(new java.awt.Color(0, 0, 255));
         jButton7.setText("Remover");
@@ -175,7 +174,7 @@ public class TelaClientes extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1720, 260, 130, 60));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 130, 60));
 
         jButton8.setBackground(new java.awt.Color(0, 0, 255));
         jButton8.setText("Atualizar");
@@ -184,10 +183,10 @@ public class TelaClientes extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 210, 130, 60));
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 130, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fotos/clientes.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1960, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1960, -1));
 
         jMenu5.setText("jMenu5");
 
