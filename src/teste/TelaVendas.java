@@ -4,7 +4,13 @@
  */
 package teste;
 
+import dao.DaoProdutos;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import projeto_java.Produto;
 
 /**
  *
@@ -39,11 +45,11 @@ public class TelaVendas extends javax.swing.JFrame {
         Clientes = new javax.swing.JButton();
         Vendas = new javax.swing.JButton();
         CadrFuncionario = new javax.swing.JButton();
-        Pesquisas = new javax.swing.JTextField();
+        PesquisaP = new javax.swing.JTextField();
         Adcnota = new javax.swing.JButton();
         AdcClientes = new javax.swing.JButton();
         Editar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        PesquisaC = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         Total = new javax.swing.JLabel();
@@ -123,16 +129,21 @@ public class TelaVendas extends javax.swing.JFrame {
         });
         getContentPane().add(CadrFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 190, 80));
 
-        Pesquisas.addActionListener(new java.awt.event.ActionListener() {
+        PesquisaP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PesquisasActionPerformed(evt);
+                PesquisaPActionPerformed(evt);
             }
         });
-        getContentPane().add(Pesquisas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 350, 50));
+        getContentPane().add(PesquisaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 350, 50));
 
         Adcnota.setBackground(new java.awt.Color(51, 51, 255));
         Adcnota.setText("Adicionar a Nota");
         Adcnota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204)));
+        Adcnota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdcnotaActionPerformed(evt);
+            }
+        });
         getContentPane().add(Adcnota, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 210, 40));
 
         AdcClientes.setBackground(new java.awt.Color(0, 51, 255));
@@ -143,12 +154,12 @@ public class TelaVendas extends javax.swing.JFrame {
         Editar.setText("Editar Nota");
         getContentPane().add(Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 220, 40));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        PesquisaC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                PesquisaCActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 20, 350, 60));
+        getContentPane().add(PesquisaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 20, 350, 60));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -194,13 +205,13 @@ public class TelaVendas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CadrFuncionarioActionPerformed
 
-    private void PesquisasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesquisasActionPerformed
+    private void PesquisaPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesquisaPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PesquisasActionPerformed
+    }//GEN-LAST:event_PesquisaPActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void PesquisaCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesquisaCActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_PesquisaCActionPerformed
 
     private void ProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProdutosActionPerformed
 TelaVendas telaV =  new TelaVendas();
@@ -233,6 +244,41 @@ dispose();
 
 
     }//GEN-LAST:event_VendasActionPerformed
+
+    private void AdcnotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdcnotaActionPerformed
+String nome = PesquisaP.getText();
+String categoria = PesquisaP.getText(); 
+
+try {
+    Produto produto = new Produto(nome, 0, 0, categoria);
+
+    DaoProdutos produtodao = new DaoProdutos();
+    ArrayList<String> resultadosStr = produtodao.PesquisarProdutos(produto);
+
+    ArrayList<Produto> resultados = new ArrayList<>(); // Lista para armazenar os objetos Produto
+
+    for (String linha : resultadosStr) {
+        String[] partes = linha.split(","); //  as informações estejam separadas por vírgulas
+
+        if (partes.length >= 2) {
+            String nomeProduto = partes[0];
+            double preco = Double.parseDouble(partes[1]);
+
+            Produto produtoResultado = new Produto(nome, preco, 0, "");
+            resultados.add(produtoResultado);
+            produtodao.fecharConexao();
+        }
+    }
+
+    ModificadordeTabelaVendas modelo = new  ModificadordeTabelaVendas(resultados);
+    jTable1.setModel(modelo);
+} catch (ClassNotFoundException ex) {
+    Logger.getLogger(TelaVendas.class.getName()).log(Level.SEVERE, null, ex);
+} catch (SQLException ex) {
+    Logger.getLogger(TelaVendas.class.getName()).log(Level.SEVERE, null, ex);
+}
+     
+    }//GEN-LAST:event_AdcnotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,7 +325,8 @@ dispose();
     private javax.swing.JRadioButton Dinheiro;
     private javax.swing.JButton Editar;
     private javax.swing.JButton Pedidos;
-    private javax.swing.JTextField Pesquisas;
+    private javax.swing.JTextField PesquisaC;
+    private javax.swing.JTextField PesquisaP;
     private javax.swing.JRadioButton Pix;
     private javax.swing.JButton Produtos;
     private javax.swing.JLabel Total;
@@ -288,6 +335,5 @@ dispose();
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

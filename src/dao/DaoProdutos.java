@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import projeto_java.Cliente;
 import projeto_java.Produto;
 
 
@@ -20,16 +21,16 @@ public class DaoProdutos {
         conexao = com.getConexao();
     }
     
-     public boolean AdiconarProdutos(String nome,String categoria,int quantidade,double preco){
+     public boolean AdiconarProdutos(Produto produto){
  
             boolean estado = false;
         String sql = "INSERT INTO `produtos` (`nome`, `categoria`, `quantidade`,`preco`) VALUES (?, ?, ?,?)";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-            stmt.setString(1, nome);
-            stmt.setString(2, categoria);
-            stmt.setInt(3, quantidade);
-            stmt.setDouble(4, preco);
+            stmt.setString(1, produto.getNome());
+            stmt.setString(2, produto.getCategoria());
+            stmt.setInt(3, produto.getQuantidade());
+            stmt.setDouble(4, produto.getPreco());
             
             int linhasAfetadas = stmt.executeUpdate();
     
@@ -49,14 +50,14 @@ public class DaoProdutos {
      
      
      
-     public boolean RemoverProdutos(int id){
+     public boolean RemoverProdutos(Produto produto){
  
             boolean estado = false;
         String sql = "DELETE FROM produtos WHERE `id` = ? ;";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             
-            stmt.setInt(1, id);
+            stmt.setInt(1,produto.getId() );
            
             
             int linhasAfetadas = stmt.executeUpdate();
@@ -106,14 +107,14 @@ public class DaoProdutos {
      
      
      
-     public ArrayList<String> PesquisarProdutos(String nome, String categoria) throws SQLException {
+     public ArrayList<String> PesquisarProdutos(Produto produto) throws SQLException {
         ArrayList<String> resultadoPesquisa = new ArrayList<>();
 
         String sql = "SELECT * FROM produtos WHERE `nome` = ? OR `categoria` = ?;";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-            stmt.setString(1, nome);
-            stmt.setString(2, categoria);
+            stmt.setString(1, produto.getNome());
+            stmt.setString(2, produto.getCategoria());
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
