@@ -4,12 +4,12 @@
  */
 package teste;
 
-import dao.DaoProdutos;
+import dao.DaoProduto;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import projeto_java.Produto;
-import static sun.jvm.hotspot.HelloWorld.e;
+
 
 /**
  *
@@ -27,7 +27,7 @@ public class Telateste extends javax.swing.JFrame {
 
    private void carregarProdutos() {
         try {
-            DaoProdutos dao = new DaoProdutos();
+            DaoProduto dao = new DaoProduto();
             listaDeProdutos = dao.ListaProdutos();
             dao.fecharConexao();
         } catch (ClassNotFoundException | SQLException ex) {

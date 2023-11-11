@@ -2,7 +2,7 @@ package projeto_java;
 
 
 import dao.DaoCliente;
-import dao.DaoProdutos;
+import dao.DaoProduto;
 import java.sql.SQLException;
 import telas.TeladeLogin;
 import teste.Telateste;
