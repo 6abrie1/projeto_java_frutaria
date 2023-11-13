@@ -35,7 +35,7 @@ public class Login extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        bLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusTraversalPolicyProvider(true);
@@ -105,14 +105,14 @@ public class Login extends javax.swing.JFrame {
         jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(48, 165, 194));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Entrar");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bLogin.setBackground(new java.awt.Color(48, 165, 194));
+        bLogin.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
+        bLogin.setForeground(new java.awt.Color(255, 255, 255));
+        bLogin.setText("Entrar");
+        bLogin.setBorder(null);
+        bLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bLoginActionPerformed(evt);
             }
         });
 
@@ -134,7 +134,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(266, 266, 266)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(bLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(98, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -151,7 +151,7 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(198, Short.MAX_VALUE))
         );
 
@@ -165,9 +165,9 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void bLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLoginActionPerformed
+        
+    }//GEN-LAST:event_bLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,7 +205,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

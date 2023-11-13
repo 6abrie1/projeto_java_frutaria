@@ -2,7 +2,9 @@ package projeto_java;
 
 
 
+import FilipeTelas.CadastroCliente;
 import FilipeTelas.Login;
+import FilipeTelas.Vendas;
 import dao.DaoCliente;
 import dao.DaoProdutos;
 import java.sql.SQLException;
@@ -20,9 +22,9 @@ public class Principal {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
 
-         Login telaf = new Login();
-         telaf.dispose();
-         telaf.setVisible(true);
+         Vendas telav = new Vendas();
+         telav.dispose();
+         telav.setVisible(true);
 
 //         /*comentario teste*/
 //         
