@@ -38,6 +38,10 @@ public class Cliente {
         this.telefone = telefone;
     }
 
+    public Cliente(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

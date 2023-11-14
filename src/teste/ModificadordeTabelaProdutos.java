@@ -1,6 +1,6 @@
 package teste;
 
-import dao.DaoProdutos;
+import dao.DaoProduto;
 import java.sql.SQLException;
 import projeto_java.Produto;
 import java.util.ArrayList;

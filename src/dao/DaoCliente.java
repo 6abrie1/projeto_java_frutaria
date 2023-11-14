@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import projeto_java.Cliente;
-import projeto_java.Produto;
 
 
 public class DaoCliente {
@@ -20,15 +19,15 @@ public class DaoCliente {
         conexao = com.getConexao();
     }
     
-     public boolean AdiconarCliente(String nome,String telefone,String email){
+     public boolean AdiconarCliente(Cliente cliente){
  
             boolean estado = false;
         String sql = "INSERT INTO `clientes` (`nome`, `telefone`, `email`) VALUES (?, ?, ?)";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-            stmt.setString(1, nome);
-            stmt.setString(2, telefone);
-            stmt.setString(3, email);
+            stmt.setString(1, cliente.getNome());
+            stmt.setString(2, cliente.getTelefone());
+            stmt.setString(3, cliente.getEmail());
         
             
             int linhasAfetadas = stmt.executeUpdate();
@@ -49,14 +48,14 @@ public class DaoCliente {
      
      
      
-     public boolean RemoverCliente(int id){
+     public boolean RemoverCliente(Cliente clientes){
  
             boolean estado = false;
         String sql = "DELETE FROM clientes WHERE `id` = ? ;";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             
-            stmt.setInt(1, id);
+            stmt.setInt(1, clientes.getId());
             
             
             int linhasAfetadas = stmt.executeUpdate();
@@ -106,14 +105,14 @@ public class DaoCliente {
      
      
      
-     public ArrayList<String> PesquisarClientes(String nome, String email) throws SQLException {
+     public ArrayList<String> PesquisarClientes(Cliente clientes) throws SQLException {
         ArrayList<String> resultadoPesquisa = new ArrayList<>();
 
         String sql = "SELECT * FROM clientes WHERE `nome` = ? OR `email` = ?;";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-            stmt.setString(1, nome);
-            stmt.setString(2, email);
+            stmt.setString(1, clientes.getNome());
+            stmt.setString(2, clientes.getEmail());
             
             
 

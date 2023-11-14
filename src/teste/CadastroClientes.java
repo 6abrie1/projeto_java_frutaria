@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import projeto_java.Cliente;
 
 /**
  *
@@ -128,11 +129,11 @@ public class CadastroClientes extends javax.swing.JFrame {
         return; // Impede a adição de produtos se algum campo estiver vazio
     }
 
-
+    Cliente cliente = new Cliente(nome, email, telefone);
 
     DaoCliente c = new DaoCliente();
     
-    c.AdiconarCliente(nome, telefone, email);
+    c.AdiconarCliente(cliente);
     c.fecharConexao();
     
     CadastroClientes tela = new CadastroClientes();
