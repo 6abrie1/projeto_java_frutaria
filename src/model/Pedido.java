@@ -16,10 +16,10 @@ public class Pedido extends Venda{
     public Pedido() {
     }
 
-    public Pedido(int id, List<Produto> listaProdutos, Cliente cliente, Date dataVenda, Double total,
+    public Pedido(int id, List<ItemVenda> listaItem, Cliente cliente, Date dataVenda, Double total,
             Funcionario vendedor, String status, Date dataEntrega, Endereco enderecoDeEntrega, String statusEntrega) {
 
-        super(id, listaProdutos, cliente, dataVenda, total, vendedor, status);
+        super(id, listaItem, cliente, dataVenda, total, vendedor, status);
 
 
         this.dataEntrega = dataEntrega;

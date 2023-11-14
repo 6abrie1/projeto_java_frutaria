@@ -17,6 +17,17 @@ public class Produto {
         this.categoria = categoria;
     }
 
+    public Produto(String nome, double preco, int quantidade, String categoria) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+        this.categoria = categoria;
+    }
+
+    public Produto(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

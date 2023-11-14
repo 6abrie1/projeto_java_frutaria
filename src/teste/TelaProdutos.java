@@ -57,15 +57,15 @@ public class TelaProdutos extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Pedidos = new javax.swing.JButton();
+        Produtos = new javax.swing.JButton();
+        Clientes = new javax.swing.JButton();
+        CDTFuncianario = new javax.swing.JButton();
+        Vendas = new javax.swing.JButton();
+        AdicionarProdutos = new javax.swing.JButton();
+        RemoverProdutos = new javax.swing.JButton();
+        AtualizarProduto = new javax.swing.JButton();
+        Foto = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -114,75 +114,75 @@ public class TelaProdutos extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 1050, 900));
 
-        jButton1.setText("Pedidos");
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 170, 80));
+        Pedidos.setText("Pedidos");
+        Pedidos.setBorder(null);
+        Pedidos.setContentAreaFilled(false);
+        getContentPane().add(Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 170, 80));
 
-        jButton2.setText("Produtos");
-        jButton2.setBorder(null);
-        jButton2.setContentAreaFilled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Produtos.setText("Produtos");
+        Produtos.setBorder(null);
+        Produtos.setContentAreaFilled(false);
+        Produtos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ProdutosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 180, 70));
+        getContentPane().add(Produtos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 180, 70));
 
-        jButton3.setText("Clientes");
-        jButton3.setBorder(null);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Clientes.setText("Clientes");
+        Clientes.setBorder(null);
+        Clientes.setContentAreaFilled(false);
+        Clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ClientesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 333, 160, 80));
+        getContentPane().add(Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 333, 160, 80));
 
-        jButton4.setText("Cadastro de Funcionario");
-        jButton4.setBorder(null);
-        jButton4.setContentAreaFilled(false);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 593, 180, 70));
+        CDTFuncianario.setText("Cadastro de Funcionario");
+        CDTFuncianario.setBorder(null);
+        CDTFuncianario.setContentAreaFilled(false);
+        getContentPane().add(CDTFuncianario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 593, 180, 70));
 
-        jButton5.setText("Vendas");
-        jButton5.setContentAreaFilled(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Vendas.setText("Vendas");
+        Vendas.setContentAreaFilled(false);
+        Vendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                VendasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 463, 180, 80));
+        getContentPane().add(Vendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 463, 180, 80));
 
-        jButton6.setBackground(new java.awt.Color(0, 51, 255));
-        jButton6.setText("Adicionar");
-        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        AdicionarProdutos.setBackground(new java.awt.Color(0, 51, 255));
+        AdicionarProdutos.setText("Adicionar");
+        AdicionarProdutos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AdicionarProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                AdicionarProdutosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 130, 60));
+        getContentPane().add(AdicionarProdutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 130, 60));
 
-        jButton7.setBackground(new java.awt.Color(0, 0, 255));
-        jButton7.setText("Remover");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        RemoverProdutos.setBackground(new java.awt.Color(0, 0, 255));
+        RemoverProdutos.setText("Remover");
+        RemoverProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                RemoverProdutosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 130, 60));
+        getContentPane().add(RemoverProdutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 130, 60));
 
-        jButton8.setBackground(new java.awt.Color(0, 51, 255));
-        jButton8.setText("Atualizar");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        AtualizarProduto.setBackground(new java.awt.Color(0, 51, 255));
+        AtualizarProduto.setText("Atualizar");
+        AtualizarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                AtualizarProdutoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 130, 60));
+        getContentPane().add(AtualizarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 130, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fotos/Produtos.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 1960, -1));
+        Foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fotos/Produtos.png"))); // NOI18N
+        getContentPane().add(Foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 1960, -1));
 
         jMenu5.setText("jMenu5");
 
@@ -234,7 +234,7 @@ public class TelaProdutos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void AdicionarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionarProdutosActionPerformed
 CadastroProdutos  telap = new CadastroProdutos();
 TelaProdutos tela = new TelaProdutos();
 
@@ -243,19 +243,21 @@ telap.setVisible(true);
 
 tela.setVisible(false);
 dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_AdicionarProdutosActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void RemoverProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverProdutosActionPerformed
         if (linhaClicada != null) {
 
   
              try {
                  String[] linhaClicadaSplit = linhaClicada.split("\n"); // Dividir a linha em partes com base nas quebras de linha
-                 int id = Integer.parseInt(linhaClicadaSplit[0].split(": ")[1]); // Obter o ID da linha selecionada
-                
-                DaoProdutos produto = new DaoProdutos();
-                produto.RemoverProdutos(id);
-                produto.fecharConexao();
+             
+                 Produto produto = new Produto(0);
+                 produto.setId(Integer.parseInt(linhaClicadaSplit[0].split(": ")[1]));// Obter o ID da linha selecionada
+                 
+                DaoProdutos produtoDao = new DaoProdutos();
+                produtoDao.RemoverProdutos(produto);
+                produtoDao.fecharConexao();
                 
                 
              } catch (ClassNotFoundException ex) {
@@ -265,9 +267,9 @@ dispose();
              }
     
     }
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_RemoverProdutosActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesActionPerformed
        TelaProdutos tela = new TelaProdutos();
        
        tela.setVisible(false);
@@ -276,25 +278,25 @@ dispose();
        TelaClientes telac = new TelaClientes();
        telac.setVisible(true);
        dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ClientesActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void AtualizarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarProdutoActionPerformed
         TelaProdutos tela = new TelaProdutos();
        
        tela.setVisible(false);
        dispose();
        tela.setVisible(true);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_AtualizarProdutoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProdutosActionPerformed
        TelaProdutos tela = new TelaProdutos();
        
        tela.setVisible(false);
        dispose();
        tela.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ProdutosActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void VendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VendasActionPerformed
         TelaProdutos tela = new TelaProdutos();
        
        tela.setVisible(false);
@@ -302,7 +304,7 @@ dispose();
        
        TelaVendas telaV = new TelaVendas();
        telaV.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_VendasActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -348,15 +350,15 @@ dispose();
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton AdicionarProdutos;
+    private javax.swing.JButton AtualizarProduto;
+    private javax.swing.JButton CDTFuncianario;
+    private javax.swing.JButton Clientes;
+    private javax.swing.JLabel Foto;
+    private javax.swing.JButton Pedidos;
+    private javax.swing.JButton Produtos;
+    private javax.swing.JButton RemoverProdutos;
+    private javax.swing.JButton Vendas;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;

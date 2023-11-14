@@ -1,19 +1,26 @@
 package projeto_java;
 
 
+<<<<<<< HEAD
 
 import FilipeTelas.CadastroCliente;
 import FilipeTelas.Login;
+<<<<<<< HEAD
 import FilipeTelas.Vendas;
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 6e069ad55bea7cf3652a9c62096a48112b2a1d62
+>>>>>>> master
 import dao.DaoCliente;
-import dao.DaoProdutos;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import dao.DaoProduto;
+=======
 
+
+>>>>>>> master
+import java.sql.SQLException;
 import telas.TeladeLogin;
-import teste.TelaProdutos;
+
 
 
 
@@ -26,6 +33,7 @@ public class Principal {
          telav.dispose();
          telav.setVisible(true);
 
+<<<<<<< HEAD
 //         /*comentario teste*/
 //         
 //         DaoAdicionarProdutos insert = new DaoAdicionarProdutos();
@@ -57,6 +65,14 @@ public class Principal {
 //    }
 //    
 //    }
+=======
+   
+
+   
+    }
+    
+    }
+>>>>>>> master
 
     
 //

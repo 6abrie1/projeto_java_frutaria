@@ -12,11 +12,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class DaoCadastro {
+public class DaoFuncinario {
  
      private Connection conexao;
     
-    public DaoCadastro() throws ClassNotFoundException, SQLException {
+    public DaoFuncinario() throws ClassNotFoundException, SQLException {
         Conexao com = new Conexao();
         conexao = com.getConexao();
     }

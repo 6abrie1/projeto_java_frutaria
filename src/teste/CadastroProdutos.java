@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import projeto_java.Produto;
 
 /**
  *
@@ -30,7 +31,7 @@ public class CadastroProdutos extends javax.swing.JFrame {
     private void initComponents() {
 
         Nome = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        AdicionarProduto = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         Preco = new javax.swing.JTextField();
         Quantidade = new javax.swing.JTextField();
@@ -41,10 +42,10 @@ public class CadastroProdutos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToggleButton1.setText("Adic");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        AdicionarProduto.setText("Adic");
+        AdicionarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                AdicionarProdutoActionPerformed(evt);
             }
         });
 
@@ -68,7 +69,7 @@ public class CadastroProdutos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(160, 160, 160)
-                .addComponent(jToggleButton1)
+                .addComponent(AdicionarProduto)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
@@ -105,7 +106,7 @@ public class CadastroProdutos extends javax.swing.JFrame {
                     .addComponent(Categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
+                .addComponent(AdicionarProduto)
                 .addGap(26, 26, 26))
         );
 
@@ -116,7 +117,7 @@ public class CadastroProdutos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CategoriaActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void AdicionarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionarProdutoActionPerformed
     try {
     nome = Nome.getText();
     categoria = Categoria.getText();
@@ -130,9 +131,11 @@ public class CadastroProdutos extends javax.swing.JFrame {
 
     quantidade = Integer.parseInt(quantidadeString);
     preco = Double.parseDouble(precoString);
-
+    
+    Produto produto = new Produto(nome, preco, quantidade, categoria);
+   
     DaoProdutos p = new DaoProdutos();
-    p.AdiconarProdutos(nome, categoria, quantidade, preco);
+    p.AdiconarProdutos(produto);
     p.fecharConexao();
     
     CadastroProdutos tela = new CadastroProdutos();
@@ -152,7 +155,7 @@ public class CadastroProdutos extends javax.swing.JFrame {
 }
 
        
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_AdicionarProdutoActionPerformed
 
    
     public static void main(String args[]) {
@@ -189,6 +192,7 @@ public class CadastroProdutos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton AdicionarProduto;
     private javax.swing.JTextField Categoria;
     private javax.swing.JTextField Nome;
     private javax.swing.JTextField Preco;
@@ -197,6 +201,5 @@ public class CadastroProdutos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

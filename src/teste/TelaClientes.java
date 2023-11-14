@@ -57,15 +57,15 @@ public class TelaClientes extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Pedidos = new javax.swing.JButton();
+        Produtos = new javax.swing.JButton();
+        Clientes = new javax.swing.JButton();
+        CDTFuncionario = new javax.swing.JButton();
+        Vendas = new javax.swing.JButton();
+        AdicionarClientes = new javax.swing.JButton();
+        RemoverClientes = new javax.swing.JButton();
+        AtualizarClientes = new javax.swing.JButton();
+        Foto = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -113,80 +113,80 @@ public class TelaClientes extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 1050, 890));
 
-        jButton1.setText("Pedidos");
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Pedidos.setText("Pedidos");
+        Pedidos.setBorder(null);
+        Pedidos.setContentAreaFilled(false);
+        Pedidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                PedidosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 170, 80));
+        getContentPane().add(Pedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 170, 80));
 
-        jButton2.setText("Produtos");
-        jButton2.setBorder(null);
-        jButton2.setContentAreaFilled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Produtos.setText("Produtos");
+        Produtos.setBorder(null);
+        Produtos.setContentAreaFilled(false);
+        Produtos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ProdutosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 180, 70));
+        getContentPane().add(Produtos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 180, 80));
 
-        jButton3.setText("Clientes");
-        jButton3.setBorder(null);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        Clientes.setText("Clientes");
+        Clientes.setBorder(null);
+        Clientes.setContentAreaFilled(false);
+        Clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ClientesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 333, 160, 80));
+        getContentPane().add(Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 160, 80));
 
-        jButton4.setText("Cadastro de Funcionario");
-        jButton4.setBorder(null);
-        jButton4.setContentAreaFilled(false);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 593, 180, 70));
+        CDTFuncionario.setText("Cadastro de Funcionario");
+        CDTFuncionario.setBorder(null);
+        CDTFuncionario.setContentAreaFilled(false);
+        getContentPane().add(CDTFuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 593, 180, 70));
 
-        jButton5.setText("Vendas");
-        jButton5.setContentAreaFilled(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Vendas.setText("Vendas");
+        Vendas.setContentAreaFilled(false);
+        Vendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                VendasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 463, 180, 80));
+        getContentPane().add(Vendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 180, 80));
 
-        jButton6.setBackground(new java.awt.Color(0, 51, 255));
-        jButton6.setText("Adicionar");
-        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        AdicionarClientes.setBackground(new java.awt.Color(0, 51, 255));
+        AdicionarClientes.setText("Adicionar");
+        AdicionarClientes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AdicionarClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                AdicionarClientesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 130, 60));
+        getContentPane().add(AdicionarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 130, 60));
 
-        jButton7.setBackground(new java.awt.Color(0, 0, 255));
-        jButton7.setText("Remover");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        RemoverClientes.setBackground(new java.awt.Color(0, 0, 255));
+        RemoverClientes.setText("Remover");
+        RemoverClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                RemoverClientesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 130, 60));
+        getContentPane().add(RemoverClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 130, 60));
 
-        jButton8.setBackground(new java.awt.Color(0, 0, 255));
-        jButton8.setText("Atualizar");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        AtualizarClientes.setBackground(new java.awt.Color(0, 0, 255));
+        AtualizarClientes.setText("Atualizar");
+        AtualizarClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                AtualizarClientesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 130, 60));
+        getContentPane().add(AtualizarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 130, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fotos/clientes.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1960, -1));
+        Foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fotos/clientes.png"))); // NOI18N
+        getContentPane().add(Foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1960, -1));
 
         jMenu5.setText("jMenu5");
 
@@ -238,7 +238,7 @@ public class TelaClientes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void AdicionarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionarClientesActionPerformed
 CadastroClientes  telaC = new CadastroClientes();
 TelaClientes tela = new TelaClientes();
 
@@ -247,20 +247,24 @@ telaC.setVisible(true);
 
 tela.setVisible(false);
 dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_AdicionarClientesActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void RemoverClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverClientesActionPerformed
 
          if (linhaClicada != null) {
 
   
              try {
                  String[] linhaClicadaSplit = linhaClicada.split("\n"); // Dividir a linha em partes com base nas quebras de linha
-                 int id = Integer.parseInt(linhaClicadaSplit[0].split(": ")[1]); // Obter o ID da linha selecionada
-
-                 DaoCliente cliente = new DaoCliente();
-                 cliente.RemoverCliente(id);
-                 cliente.fecharConexao();
+                 
+               
+                 Cliente cliente = new Cliente(0);
+                 cliente.setId(Integer.parseInt(linhaClicadaSplit[0].split(": ")[1]));// Obter o ID da linha selecionada
+                 
+                 
+                 DaoCliente clienteDao = new DaoCliente();
+                 clienteDao.RemoverCliente(cliente);
+                 clienteDao.fecharConexao();
              } catch (ClassNotFoundException ex) {
                  Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
              } catch (SQLException ex) {
@@ -268,18 +272,18 @@ dispose();
              }
     
     }
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_RemoverClientesActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void AtualizarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarClientesActionPerformed
      
 TelaClientes tela = new TelaClientes();
 
 tela.setVisible(false);
 dispose(); 
 tela.setVisible(true);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_AtualizarClientesActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProdutosActionPerformed
       
 TelaClientes tela = new TelaClientes();
 
@@ -288,20 +292,20 @@ TelaClientes tela = new TelaClientes();
 
         TelaProdutos telaP = new TelaProdutos();
         telaP.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ProdutosActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void PedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PedidosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_PedidosActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesActionPerformed
     TelaClientes tela = new TelaClientes();
     tela.setVisible(false);
     dispose();
     tela.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ClientesActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void VendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VendasActionPerformed
       TelaClientes tela = new TelaClientes();
      tela.setVisible(false);
      dispose();
@@ -309,7 +313,7 @@ TelaClientes tela = new TelaClientes();
      TelaVendas telav = new TelaVendas();
      telav.setVisible(true);
      
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_VendasActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -355,15 +359,15 @@ TelaClientes tela = new TelaClientes();
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton AdicionarClientes;
+    private javax.swing.JButton AtualizarClientes;
+    private javax.swing.JButton CDTFuncionario;
+    private javax.swing.JButton Clientes;
+    private javax.swing.JLabel Foto;
+    private javax.swing.JButton Pedidos;
+    private javax.swing.JButton Produtos;
+    private javax.swing.JButton RemoverClientes;
+    private javax.swing.JButton Vendas;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
