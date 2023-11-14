@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Venda {
     private int id;
-    private List<Produto> listaProdutos;
+    private List<ItemVenda> listaItem;
     private Cliente cliente;
     private Date dataVenda;
     private Double total;
@@ -16,9 +16,9 @@ public class Venda {
     }
 
 
-    public Venda(int id, List<Produto> listaProdutos, Cliente cliente, Date dataVenda, Double total, Funcionario vendedor, String status) {
+    public Venda(int id, List<ItemVenda> listaItem, Cliente cliente, Date dataVenda, Double total, Funcionario vendedor, String status) {
         this.id = id;
-        this.listaProdutos = listaProdutos;
+        this.listaItem = listaItem;
         this.cliente = cliente;
         this.dataVenda = dataVenda;
         this.total = total;
@@ -37,13 +37,13 @@ public class Venda {
     }
 
 
-    public List<Produto> getListaProdutos() {
-        return listaProdutos;
+    public List<ItemVenda> getlistaItem() {
+        return listaItem;
     }
 
 
-    public void setListaProdutos(List<Produto> listaProdutos) {
-        this.listaProdutos = listaProdutos;
+    public void setlistaItem(List<ItemVenda> listaItem) {
+        this.listaItem = listaItem;
     }
 
 

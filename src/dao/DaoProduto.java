@@ -12,18 +12,18 @@ import projeto_java.Cliente;
 import projeto_java.Produto;
 
 
-public class DaoProdutos {
+public class DaoProduto {
    
         private Connection conexao;
 
-    public DaoProdutos() throws ClassNotFoundException, SQLException {
+    public DaoProduto() throws ClassNotFoundException, SQLException {
         Conexao com = new Conexao();
         conexao = com.getConexao();
     }
     
      public boolean AdiconarProdutos(Produto produto){
  
-            boolean estado = false;
+        boolean estado = false;
         String sql = "INSERT INTO `produtos` (`nome`, `categoria`, `quantidade`,`preco`) VALUES (?, ?, ?,?)";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
