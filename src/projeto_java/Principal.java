@@ -1,5 +1,6 @@
 package projeto_java;
 
+import TelaCliente.CadastroCliente;
 import TelaProdutos.CadastrarProduto;
 import TelaProdutos.CadastrarProduto;
 import telas.Login;
@@ -13,10 +14,9 @@ public class Principal {
         Login tela1 = new Login();
         tela1.setVisible(true);
         
-       CadastrarProduto cp = new CadastrarProduto();
        
-       for (int x = 0; x < 40; x++) {
-    System.out.println(tela1.getCargo());
+        
+    
 }
        
        
@@ -24,5 +24,5 @@ public class Principal {
        
         
          
-    }}
+    }
 

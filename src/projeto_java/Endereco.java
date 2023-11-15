@@ -4,11 +4,13 @@
  */
 package projeto_java;
 
+import java.io.Serializable;
+
 /**
  *
  * @author gabri
  */
-public class Endereco {
+public class Endereco implements Serializable{
   private String rua,bairro,numero,cep,complemento;
 
     public Endereco(String rua, String bairro, String numero, String cep, String complemento) {

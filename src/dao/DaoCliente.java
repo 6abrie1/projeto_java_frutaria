@@ -1,6 +1,9 @@
 
 package dao;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +12,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import projeto_java.Cliente;
+import projeto_java.Endereco;
 
 
 public class DaoCliente {
@@ -19,30 +23,41 @@ public class DaoCliente {
         conexao = com.getConexao();
     }
     
-     public boolean AdiconarCliente(Cliente cliente){
- 
-            boolean estado = false;
-        String sql = "INSERT INTO `clientes` (`nome`, `telefone`, `email`) VALUES (?, ?, ?)";
+     public byte[] converterParaBytes(Endereco endereco) {
+        try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
+             ObjectOutputStream oos = new ObjectOutputStream(bos)) {
+            oos.writeObject(endereco);
+            return bos.toByteArray();
+        } catch (IOException ex) {
+            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    public boolean AdicionarCliente(Cliente cliente) {
+        boolean estado = false;
+        String sql = "INSERT INTO `clientes` (`nome`, `telefone`, `email`, `endereco`) VALUES (?, ?, ?, ?)";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             stmt.setString(1, cliente.getNome());
             stmt.setString(2, cliente.getTelefone());
             stmt.setString(3, cliente.getEmail());
-        
-            
+            // Serializa o objeto Endereco antes de armazená-lo no banco de dados
+            byte[] enderecoSerializado = converterParaBytes(cliente.getEndereco());
+            stmt.setBytes(4, enderecoSerializado);
+
             int linhasAfetadas = stmt.executeUpdate();
-    
-    if (linhasAfetadas > 0) {
-        System.out.println("Inserção bem-sucedida.");
-        estado = true ;
-        stmt.close();
-    } else {
-        System.out.println("Nenhuma linha afetada.");
-    }
+
+            if (linhasAfetadas > 0) {
+                System.out.println("Inserção bem-sucedida.");
+                estado = true;
+            } else {
+                System.out.println("Nenhuma linha afetada.");
+            }
         } catch (SQLException ex) {
             Logger.getLogger(DaoLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         return estado;
     }
      
@@ -140,4 +155,6 @@ public class DaoCliente {
             Logger.getLogger(DaoLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    
 }

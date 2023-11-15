@@ -133,7 +133,7 @@ public class CadastroClientes extends javax.swing.JFrame {
 
     DaoCliente c = new DaoCliente();
     
-    c.AdiconarCliente(cliente);
+    c.AdicionarCliente(cliente);
     c.fecharConexao();
     
     CadastroClientes tela = new CadastroClientes();
