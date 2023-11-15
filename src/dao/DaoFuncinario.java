@@ -22,15 +22,17 @@ public class DaoFuncinario {
     }
     
     
-    public boolean fazercadstro(String email,String usuario,String senha){
+    public boolean fazercadstro(String email,String usuario,String senha,String cargo){
  
             boolean estado = false;
-        String sql = "INSERT INTO `credencial` (`usuario`, `senha`, `email`) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO `credencial` (`usuario`, `senha`, `email`,`cargo`) VALUES (?, ?, ?,?)";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             stmt.setString(1, usuario);
             stmt.setString(2, senha);
             stmt.setString(3, email);
+            stmt.setString(4, cargo);
+            
             
             int linhasAfetadas = stmt.executeUpdate();
     

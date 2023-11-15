@@ -1,4 +1,4 @@
-package teste;
+package TelaCliente;
 
 
 import java.sql.SQLException;

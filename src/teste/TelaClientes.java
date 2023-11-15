@@ -4,6 +4,7 @@
  */
 package teste;
 
+import TelaCliente.ModificadordeTabelaClientes;
 import dao.DaoCliente;
 import dao.DaoProduto;
 import java.awt.GridLayout;

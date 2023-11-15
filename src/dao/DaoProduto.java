@@ -130,7 +130,45 @@ public class DaoProduto {
         conexao.close();
         return resultadoPesquisa;
     }
-    
+    public void AtualizarProduto(Produto produto) throws ClassNotFoundException, SQLException {
+    String sql = "UPDATE produtos SET nome = ?, categoria = ?, quantidade = ?, preco = ? WHERE id = ?";
+
+    try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+        stmt.setString(1, produto.getNome());
+        stmt.setString(2, produto.getCategoria());
+        stmt.setInt(3, produto.getQuantidade());
+        stmt.setDouble(4, produto.getPreco());
+        stmt.setInt(5, produto.getId());
+
+      int linhasAfetadas = stmt.executeUpdate();
+      System.out.println("Linhas afetadas: " + linhasAfetadas);
+
+    }
+}
+    public Produto obterProdutoPorId(int id) throws ClassNotFoundException, SQLException {
+        Produto produto = null;
+        String sql = "SELECT * FROM produtos WHERE id = ?";
+
+        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+
+            try (ResultSet resultado = stmt.executeQuery()) {
+                if (resultado.next()) {
+                  
+                    String nome = resultado.getString("nome"); 
+                    double preco = resultado.getDouble("preco"); 
+                    int quantidade = resultado.getInt("quantidade"); 
+                    String categoria = resultado.getString("categoria"); 
+
+                   
+                    produto = new Produto(nome, preco, quantidade, categoria);
+                    produto.setId(id); // Defina o ID do produto com o ID fornecido
+                }
+            }
+        }
+
+        return produto;
+    }
       public void fecharConexao() {
         try {
             if (conexao != null && !conexao.isClosed()) {

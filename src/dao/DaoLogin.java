@@ -34,7 +34,44 @@ public class DaoLogin {
         
         return estado;
     }
-    
+    public Integer obterIdUsuario(String usuario, String senha) {
+    Integer idUsuario = null;
+    String sql = "SELECT id FROM credencial WHERE usuario = ? AND senha = ?";
+
+    try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+        stmt.setString(1, usuario);
+        stmt.setString(2, senha);
+
+        try (ResultSet resultado = stmt.executeQuery()) {
+            if (resultado.next()) {
+                idUsuario = resultado.getInt("id");
+            }
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(DaoLogin.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
+    return idUsuario;
+}
+    public String obterCargoUsuario(String usuario, String senha) {
+    String cargo = null;
+    String sql = "SELECT cargo FROM credencial WHERE usuario = ? AND senha = ?";
+
+    try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+        stmt.setString(1, usuario);
+        stmt.setString(2, senha);
+
+        try (ResultSet resultado = stmt.executeQuery()) {
+            if (resultado.next()) {
+                cargo = resultado.getString("cargo");
+            }
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(DaoLogin.class.getName()).log(Level.SEVERE, null, ex);
+    }
+
+    return cargo;
+}
     public void fecharConexao() {
         try {
             if (conexao != null && !conexao.isClosed()) {

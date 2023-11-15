@@ -6,6 +6,7 @@ package telas;
 
 import TelaCliente.CadastrarUsuario;
 import TelaProdutos.CadastrarProduto;
+import TelaProdutos.EditarProduto;
 import TelaProdutos.ModificadordeTabelaProdutos;
 import dao.DaoProduto;
 import java.sql.SQLException;
@@ -181,6 +182,11 @@ public class TelaProduto extends javax.swing.JFrame {
         Editar.setForeground(new java.awt.Color(255, 255, 255));
         Editar.setText("Editar");
         Editar.setBorder(null);
+        Editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditarActionPerformed(evt);
+            }
+        });
 
         Remover.setBackground(new java.awt.Color(106, 158, 218));
         Remover.setFont(new java.awt.Font("Tw Cen MT", 0, 28)); // NOI18N
@@ -322,13 +328,23 @@ public class TelaProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void CDTFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDTFuncionarioActionPerformed
-     
+
+    Login l = new Login();
+   if( l.getCargo().equals("Admistrador")){
+      
+    CDTFuncionario.setEnabled(true);
+    
      TelaProduto telaproduto = new TelaProduto();
      telaproduto.setVisible(false);
      dispose();
      
     CadastrarUsuario CDTTela = new CadastrarUsuario();
     CDTTela.setVisible(true);
+   }else{
+   
+   CDTFuncionario.setEnabled(false);
+       
+   }
     }//GEN-LAST:event_CDTFuncionarioActionPerformed
 
     private void VendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VendasActionPerformed
@@ -341,6 +357,36 @@ public class TelaProduto extends javax.swing.JFrame {
      telavendas.setVisible(true);
      
     }//GEN-LAST:event_VendasActionPerformed
+
+    private void EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarActionPerformed
+        if (linhaClicada != null) {
+    try {
+        String[] linhaClicadaSplit = linhaClicada.split("\n");
+        Produto produto = new Produto(0);
+        produto.setId(Integer.parseInt(linhaClicadaSplit[0].split(": ")[1]));
+
+        // Recupere os detalhes do produto do banco de dados com base no ID
+        DaoProduto produtoDao = new DaoProduto();
+        produto = produtoDao.obterProdutoPorId(produto.getId());
+        produtoDao.fecharConexao();
+
+        // Abre a tela de edição com os detalhes do produto
+        System.out.println("Antes de chamar setProduto: " + produto);
+        EditarProduto editarProduto = new EditarProduto(produto);
+        editarProduto.setVisible(true);
+        System.out.println("Depois de chamar setProduto: " + produto);
+
+        // Fecha a tela atual 
+        TelaProduto telaproduto = new TelaProduto();
+        telaproduto.setVisible(false);
+        dispose();
+
+    } catch (ClassNotFoundException | SQLException ex) {
+        Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+
+    }//GEN-LAST:event_EditarActionPerformed
 
     /**
      * @param args the command line arguments

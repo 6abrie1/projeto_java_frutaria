@@ -8,12 +8,12 @@ package TelaCliente;
  *
  * @author jhene
  */
-public class AlterarUsuario extends javax.swing.JInternalFrame {
+public class AlterarCliente extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form AlterarUsuário
      */
-    public AlterarUsuario() {
+    public AlterarCliente() {
         initComponents();
     }
 

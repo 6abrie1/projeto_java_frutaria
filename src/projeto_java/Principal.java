@@ -15,6 +15,11 @@ public class Principal {
         
        CadastrarProduto cp = new CadastrarProduto();
        
+       for (int x = 0; x < 40; x++) {
+    System.out.println(tela1.getCargo());
+}
+       
+       
         
        
         
