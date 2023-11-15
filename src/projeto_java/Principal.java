@@ -1,10 +1,20 @@
 package projeto_java;
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a67f60a5586ef3d7cfcd892f7fd12610706babcf
 
 import FilipeTelas.CadastroCliente;
 import FilipeTelas.Login;
+<<<<<<< HEAD
 import FilipeTelas.Vendas;
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> 6e069ad55bea7cf3652a9c62096a48112b2a1d62
+>>>>>>> a67f60a5586ef3d7cfcd892f7fd12610706babcf
 import dao.DaoCliente;
 import dao.DaoProduto;
 
