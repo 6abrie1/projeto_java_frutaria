@@ -4,6 +4,10 @@
  */
 package br.com.login.teladelogin;
 
+import TelaCliente.AlterarUsuario;
+import TelaCliente.CadastrarUsuario;
+import TelaCliente.ExcluirUsuario;
+
 /**
  *
  * @author jhene
