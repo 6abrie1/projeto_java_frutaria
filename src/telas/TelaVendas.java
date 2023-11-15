@@ -4,6 +4,7 @@
  */
 package telas;
 
+import TelaCliente.CadastrarUsuario;
 import java.awt.Color;
 
 /**
@@ -323,6 +324,11 @@ public class TelaVendas extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("PRODUTOS");
         jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(106, 158, 218));
         jButton3.setFont(new java.awt.Font("Tw Cen MT", 0, 28)); // NOI18N
@@ -400,8 +406,23 @@ public class TelaVendas extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+    
+    setVisible(false);
+    dispose();
+    
+    CadastrarUsuario cu = new CadastrarUsuario();
+    cu.setVisible(true);
+    
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    
+    setVisible(false);
+    dispose();
+
+    TelaProduto tp = new TelaProduto();
+    tp.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
