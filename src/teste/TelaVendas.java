@@ -4,7 +4,7 @@
  */
 package teste;
 
-import dao.DaoProdutos;
+import dao.DaoProduto;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -252,7 +252,7 @@ String categoria = PesquisaP.getText();
 try {
     Produto produto = new Produto(nome, 0, 0, categoria);
 
-    DaoProdutos produtodao = new DaoProdutos();
+    DaoProduto produtodao = new DaoProduto();
     ArrayList<String> resultadosStr = produtodao.PesquisarProdutos(produto);
 
     ArrayList<Produto> resultados = new ArrayList<>(); // Lista para armazenar os objetos Produto
