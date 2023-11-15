@@ -5,7 +5,7 @@
 package teste;
 
 import dao.DaoCliente;
-import dao.DaoProdutos;
+import dao.DaoProduto;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

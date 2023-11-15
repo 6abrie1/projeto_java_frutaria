@@ -5,7 +5,7 @@
 package teste;
 
 import dao.DaoCliente;
-import dao.DaoProdutos;
+import dao.DaoProduto;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

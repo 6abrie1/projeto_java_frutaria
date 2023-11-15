@@ -34,7 +34,7 @@ public class Telateste extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-        ModificadordeTabela modelo = new ModificadordeTabela(listaDeProdutos);
+        ModificadordeTabelaProdutos modelo = new ModificadordeTabelaProdutos(listaDeProdutos);
         jTable1.setModel(modelo);
     }
     @SuppressWarnings("unchecked")

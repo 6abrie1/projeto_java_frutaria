@@ -48,10 +48,10 @@ public class DaoItemVenda {
         return estado;
         }
 
-        public List<ItemVenda> listarItensDeVenda(int idVenda){
-            List<ItemVenda> lsitaItemVendas = new ArrayList();
-            String sql = "SELECT * FROM t"
-        }
+        // public List<ItemVenda> listarItensDeVenda(int idVenda){
+        //     List<ItemVenda> lsitaItemVendas = new ArrayList();
+        //     String sql = "SELECT * FROM t";
+        // }
 
 
     }

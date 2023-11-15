@@ -4,7 +4,7 @@
  */
 package teste;
 
-import dao.DaoProdutos;
+import dao.DaoProduto;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -134,7 +134,7 @@ public class CadastroProdutos extends javax.swing.JFrame {
     
     Produto produto = new Produto(nome, preco, quantidade, categoria);
    
-    DaoProdutos p = new DaoProdutos();
+    DaoProduto p = new DaoProduto();
     p.AdiconarProdutos(produto);
     p.fecharConexao();
     

@@ -5,7 +5,7 @@
 package teste;
 
 import dao.DaoCliente;
-import dao.DaoProdutos;
+import dao.DaoProduto;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -41,7 +41,7 @@ public class TelaProdutos extends javax.swing.JFrame {
 
    private void carregarProdutos() {
         try {
-            DaoProdutos dao = new DaoProdutos();
+            DaoProduto dao = new DaoProduto();
             listaDeProdutos = dao.ListaProdutos();
             dao.fecharConexao();
         } catch (ClassNotFoundException | SQLException ex) {
@@ -255,7 +255,7 @@ dispose();
                  Produto produto = new Produto(0);
                  produto.setId(Integer.parseInt(linhaClicadaSplit[0].split(": ")[1]));// Obter o ID da linha selecionada
                  
-                DaoProdutos produtoDao = new DaoProdutos();
+                DaoProduto produtoDao = new DaoProduto();
                 produtoDao.RemoverProdutos(produto);
                 produtoDao.fecharConexao();
                 
