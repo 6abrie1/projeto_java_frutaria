@@ -3,17 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/dao/DaoFuncinario.java</file>
+            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/TelaCliente/CadastroCliente.java</file>
+            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/dao/DaoCliente.java</file>
+            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/TelaCliente/ModificadordeTabelaClientes.java</file>
             <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/projeto_java/Principal.java</file>
             <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/dao/DaoProduto.java</file>
-            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/dao/Conexao.java</file>
             <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/telas/TelaVendas.java</file>
-            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/telas/TelaProduto.java</file>
-            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/teste/TelaProdutos.java</file>
+            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/TelaProdutos/TelaProduto.java</file>
+            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/TelaCliente/TelaCliente.java</file>
             <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/TelaProdutos/CadastrarProduto.java</file>
-            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/TelaProdutos/ModificadordeTabelaProdutos.java</file>
-            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/TelaProdutos/ExcluirProduto.java</file>
-            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/TelaCliente/CadastrarUsuario.java</file>
+            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/TelaCliente/EditarCliente.java</file>
+            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/TelaProdutos/EditarProduto.java</file>
+            <file>file:/C:/Users/gabri/Documents/Trabalho/projeto_java_frutaria/src/projeto_java/Cliente.java</file>
         </group>
     </open-files>
 </project-private>

@@ -4,6 +4,7 @@
  */
 package telas;
 
+import TelaProdutos.TelaProduto;
 import dao.DaoLogin;
 import java.sql.SQLException;
 import java.util.logging.Level;

@@ -4,6 +4,7 @@
  */
 package telas;
 
+import TelaProdutos.TelaProduto;
 import TelaCliente.CadastrarUsuario;
 import java.awt.Color;
 
@@ -335,6 +336,11 @@ public class TelaVendas extends javax.swing.JFrame {
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("CLIENTES");
         jButton3.setBorder(null);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(106, 158, 218));
         jButton4.setFont(new java.awt.Font("Tw Cen MT", 0, 28)); // NOI18N
@@ -407,11 +413,21 @@ public class TelaVendas extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
     
-    setVisible(false);
-    dispose();
+   Login l = new Login();
+   if( l.getCargo().equals("Admistrador")){
+      
+    jButton5.setEnabled(true);
     
-    CadastrarUsuario cu = new CadastrarUsuario();
-    cu.setVisible(true);
+     setVisible(false);
+     dispose();
+     
+    CadastrarUsuario CDTTela = new CadastrarUsuario();
+    CDTTela.setVisible(true);
+   }else{
+   
+   jButton5.setEnabled(false);
+       
+   }
     
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -423,6 +439,13 @@ public class TelaVendas extends javax.swing.JFrame {
     TelaProduto tp = new TelaProduto();
     tp.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        setVisible(false);
+        dispose();
+        TelaCliente tc = new TelaCliente();
+        tc.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

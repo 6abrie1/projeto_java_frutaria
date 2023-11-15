@@ -1,29 +1,24 @@
-
 package projeto_java;
 
 /**
- *
+ * Classe que representa um cliente.
+ * 
  * @author gabri
  */
 public class Cliente {
-  private int id;
-  private String nome,email,telefone;
-  private  Endereco endereco;
+    private int id;
+    private String nome, email, telefone;
+    private String endereco;  
 
-    public Cliente(String nome, String email, String telefone, Endereco endereco) {
+    // Construtor para criar um cliente com endereço
+    public Cliente(String nome, String email, String telefone, String endereco) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.endereco = endereco;
     }
 
-    public Cliente(String nome, String email, String telefone) {
-        this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-    }
-
-    public Cliente(int id, String nome, String email, String telefone, Endereco endereco) {
+    public Cliente(int id, String nome, String email, String telefone, String endereco) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -31,16 +26,12 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public Cliente(int id, String nome, String email, String telefone) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-    }
-
+    // Construtor para criar um cliente com ID
     public Cliente(int id) {
         this.id = id;
     }
+
+    // Métodos getters e setters para acessar e modificar os atributos
 
     public int getId() {
         return id;
@@ -49,8 +40,6 @@ public class Cliente {
     public void setId(int id) {
         this.id = id;
     }
-   
-
 
     public String getNome() {
         return nome;
@@ -75,10 +64,12 @@ public class Cliente {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-   public Endereco getEndereco() {
-    return endereco;
-}
-   
-   
-   
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 }

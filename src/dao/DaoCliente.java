@@ -1,8 +1,10 @@
 
 package dao;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,22 +19,24 @@ import projeto_java.Endereco;
 
 public class DaoCliente {
      private Connection conexao;
-
+    
+     
     public DaoCliente() throws ClassNotFoundException, SQLException {
         Conexao com = new Conexao();
         conexao = com.getConexao();
     }
     
-     public byte[] converterParaBytes(Endereco endereco) {
-        try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
-             ObjectOutputStream oos = new ObjectOutputStream(bos)) {
-            oos.writeObject(endereco);
-            return bos.toByteArray();
-        } catch (IOException ex) {
-            Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
+   public byte[] converterParaBytes(Endereco endereco) {
+    try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
+         ObjectOutputStream oos = new ObjectOutputStream(bos)) {
+        oos.writeObject(endereco);
+        return bos.toByteArray();
+    } catch (IOException ex) {
+        Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, "Erro ao converter para bytes", ex);
     }
+    return null;
+}
+
 
     public boolean AdicionarCliente(Cliente cliente) {
         boolean estado = false;
@@ -42,9 +46,7 @@ public class DaoCliente {
             stmt.setString(1, cliente.getNome());
             stmt.setString(2, cliente.getTelefone());
             stmt.setString(3, cliente.getEmail());
-            // Serializa o objeto Endereco antes de armazená-lo no banco de dados
-            byte[] enderecoSerializado = converterParaBytes(cliente.getEndereco());
-            stmt.setBytes(4, enderecoSerializado);
+            stmt.setString(4, cliente.getEndereco());
 
             int linhasAfetadas = stmt.executeUpdate();
 
@@ -90,11 +92,11 @@ public class DaoCliente {
     }
      
      
-     public ArrayList<Cliente> ListaClientes() {
-         ArrayList<Cliente> resultadoLista = new ArrayList<>();
-         String sql = "SELECT * FROM clientes ;";
+public ArrayList<Cliente> ListaClientes() {
+    ArrayList<Cliente> resultadoLista = new ArrayList<>();
+    String sql = "SELECT * FROM clientes;";
 
-     try (PreparedStatement stmt = conexao.prepareStatement(sql);
+    try (PreparedStatement stmt = conexao.prepareStatement(sql);
          ResultSet resultado = stmt.executeQuery()) {
 
         while (resultado.next()) {
@@ -102,24 +104,20 @@ public class DaoCliente {
             String nome = resultado.getString("nome");
             String telefone = resultado.getString("telefone");
             String email = resultado.getString("email");
-       
-            
-            // Recupere os valores restantes das colunas que você precisa da tabela.
+            String endereco = resultado.getString("endereco");
 
-            Cliente cliente = new Cliente(id, nome, email, telefone);//precisar pegar os valores do endereco no tabela de endereco.
-            
+           
+
+            Cliente cliente = new Cliente(id, nome, email, telefone, endereco);
             resultadoLista.add(cliente);
         }
     } catch (SQLException ex) {
         Logger.getLogger(DaoLogin.class.getName()).log(Level.SEVERE, null, ex);
     }
-            return resultadoLista;
+    return resultadoLista;
 }
-     
-     
-     
-     
-     
+
+
      public ArrayList<String> PesquisarClientes(Cliente clientes) throws SQLException {
         ArrayList<String> resultadoPesquisa = new ArrayList<>();
 
@@ -145,8 +143,33 @@ public class DaoCliente {
         conexao.close();
         return resultadoPesquisa;
     }
+ public Cliente obterClientePorId(int idCliente) throws ClassNotFoundException, SQLException {
+    String sql = "SELECT * FROM clientes WHERE id = ?;";
     
-      public void fecharConexao() {
+    try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+        stmt.setInt(1, idCliente);
+
+        try (ResultSet resultado = stmt.executeQuery()) {
+            if (resultado.next()) {
+                // Extrair os dados do cliente do resultado
+                String nome = resultado.getString("nome");
+                String email = resultado.getString("email");
+                String telefone = resultado.getString("telefone");
+                String endereco = resultado.getString("endereco");
+
+                // Criar e retornar um objeto Cliente
+                return new Cliente(idCliente, nome, email, telefone, endereco);
+            }
+        }
+    } catch (SQLException ex) {
+        // Log da exceção 
+        ex.printStackTrace();
+        throw ex; // Re-lança a exceção para sinalizar o erro ao chamador
+    }
+
+    return null;
+}
+public void fecharConexao() {
         try {
             if (conexao != null && !conexao.isClosed()) {
                 conexao.close();

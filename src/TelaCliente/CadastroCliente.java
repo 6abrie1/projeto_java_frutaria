@@ -8,8 +8,10 @@ import dao.DaoCliente;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import projeto_java.Cliente;
 import projeto_java.Endereco;
+import telas.TelaCliente;
 
 /**
  *
@@ -292,6 +294,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void TelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelefoneActionPerformed
@@ -315,7 +318,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_NumeroActionPerformed
 
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
-        try {
+    try {
     String nomeCliente = Nome.getText();
     String telefoneCliente = Telefone.getText();
     String emailCliente = Email.getText();
@@ -325,28 +328,34 @@ public class CadastroCliente extends javax.swing.JFrame {
     String cepEndereco = Cep.getText();
     String complementoEndereco = Complemento.getText();
 
-    // Criar objeto Endereco
-    Endereco enderecoCliente = new Endereco(ruaEndereco,bairroEndereco,numeroEndereco,cepEndereco,complementoEndereco);
-    
+    // Verificar se algum dos campos obrigatórios está vazio
+    if (nomeCliente.isEmpty() || telefoneCliente.isEmpty() || emailCliente.isEmpty() ||
+        ruaEndereco.isEmpty() || numeroEndereco.isEmpty() || bairroEndereco.isEmpty() ||
+        cepEndereco.isEmpty() || complementoEndereco.isEmpty()) {
+        // Exibir mensagem de erro ou fazer algo apropriado
+        JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos obrigatórios.");
+    } else {
+        String enderecoCompleto = ruaEndereco + ", " + numeroEndereco + ", " + bairroEndereco + ", " + cepEndereco + ", " + complementoEndereco;
 
-    // Criar objeto Cliente
-    Cliente novoCliente = new Cliente(nomeCliente, emailCliente, telefoneCliente, enderecoCliente);
-    
+        // Criar objeto Cliente
+        Cliente novoCliente = new Cliente(nomeCliente, emailCliente, telefoneCliente, enderecoCompleto);
 
-    // Chamar método para cadastrar no banco usando DaoCliente
-    DaoCliente daoClientes = new DaoCliente();
-    daoClientes.AdicionarCliente(novoCliente);
-    daoClientes.fecharConexao();
-    
-    // Limpar campos após o cadastro
-    limparCampos();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        // Chamar método para cadastrar no banco usando DaoCliente
+        DaoCliente daoClientes = new DaoCliente();
+        daoClientes.AdicionarCliente(novoCliente);
+        daoClientes.fecharConexao();
 
+        // Limpar campos após o cadastro
+        limparCampos();
 
+        // Ocultar a janela atual e mostrar a TelaCliente
+        setVisible(false);
+        TelaCliente tc = new TelaCliente();
+        tc.setVisible(true);
+    }
+} catch (ClassNotFoundException | SQLException ex) {
+    Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+}
 
     }//GEN-LAST:event_CadastrarActionPerformed
 

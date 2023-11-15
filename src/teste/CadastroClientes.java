@@ -129,7 +129,7 @@ public class CadastroClientes extends javax.swing.JFrame {
         return; // Impede a adição de produtos se algum campo estiver vazio
     }
 
-    Cliente cliente = new Cliente(nome, email, telefone);
+    Cliente cliente = new Cliente(nome, email, telefone,"");
 
     DaoCliente c = new DaoCliente();
     

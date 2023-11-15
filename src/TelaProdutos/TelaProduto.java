@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package telas;
+package TelaProdutos;
 
 import TelaCliente.CadastrarUsuario;
 import TelaProdutos.CadastrarProduto;
@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import projeto_java.Produto;
+import telas.Login;
+import telas.TelaCliente;
+import telas.TelaVendas;
 import teste.TelaClientes;
 
 /**
@@ -88,6 +91,11 @@ public class TelaProduto extends javax.swing.JFrame {
         Clientes.setForeground(new java.awt.Color(255, 255, 255));
         Clientes.setText("Clientes");
         Clientes.setBorder(null);
+        Clientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClientesActionPerformed(evt);
+            }
+        });
 
         Vendas.setBackground(new java.awt.Color(106, 158, 218));
         Vendas.setFont(new java.awt.Font("Tw Cen MT", 0, 28)); // NOI18N
@@ -265,18 +273,13 @@ public class TelaProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_ProdutosActionPerformed
 
     private void AdcionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdcionarActionPerformed
-       
-        
-        TelaProduto telaproduto = new TelaProduto();
-        telaproduto.setVisible(false);
+            
+        setVisible(false);
         dispose();
         
         CadastrarProduto cp = new CadastrarProduto();
         cp.setVisible(true);
-        
-        
-        
-        
+             
     }//GEN-LAST:event_AdcionarActionPerformed
 
     private void RemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverActionPerformed
@@ -334,8 +337,7 @@ public class TelaProduto extends javax.swing.JFrame {
       
     CDTFuncionario.setEnabled(true);
     
-     TelaProduto telaproduto = new TelaProduto();
-     telaproduto.setVisible(false);
+     setVisible(false);
      dispose();
      
     CadastrarUsuario CDTTela = new CadastrarUsuario();
@@ -387,6 +389,13 @@ public class TelaProduto extends javax.swing.JFrame {
 }
 
     }//GEN-LAST:event_EditarActionPerformed
+
+    private void ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesActionPerformed
+        setVisible(false);
+        dispose();
+        TelaCliente tc = new TelaCliente();
+        tc.setVisible(true);
+    }//GEN-LAST:event_ClientesActionPerformed
 
     /**
      * @param args the command line arguments

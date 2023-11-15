@@ -4,7 +4,8 @@ import TelaCliente.CadastroCliente;
 import TelaProdutos.CadastrarProduto;
 import TelaProdutos.CadastrarProduto;
 import telas.Login;
-import telas.TelaProduto;
+import telas.TelaCliente;
+import TelaProdutos.TelaProduto;
 
 
 public class Principal {
@@ -13,6 +14,8 @@ public class Principal {
     
         Login tela1 = new Login();
         tela1.setVisible(true);
+        
+        
         
        
         
