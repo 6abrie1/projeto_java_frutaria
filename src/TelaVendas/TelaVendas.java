@@ -4,9 +4,7 @@
  */
 package TelaVendas;
 
-import TelaProdutos.*;
 import TelaCliente.CadastrarUsuario;
-import TelaProdutos.CadastrarProduto;
 import TelaProdutos.EditarProduto;
 import TelaProdutos.ModificadordeTabelaProdutos;
 import dao.DaoProduto;
@@ -17,8 +15,8 @@ import java.util.logging.Logger;
 import model.Produto;
 import telas.Login;
 import telas.TelaCliente;
+
 //import telas.TelaVendas;
-import teste.TelaClientes;
 
 /**
  *
@@ -294,8 +292,8 @@ public class TelaVendas extends javax.swing.JFrame {
         setVisible(false);
         dispose();
         
-        CadastrarProduto cp = new CadastrarProduto();
-        cp.setVisible(true);             
+       Efetuar e = new Efetuar();
+        e.setVisible(true);             
     }//GEN-LAST:event_AdcionarActionPerformed
 
     private void RemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverActionPerformed
@@ -319,9 +317,9 @@ public class TelaVendas extends javax.swing.JFrame {
                 
                 
              } catch (ClassNotFoundException ex) {
-                 Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
              } catch (SQLException ex) {
-                 Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
              }
     
     }
@@ -400,7 +398,7 @@ public class TelaVendas extends javax.swing.JFrame {
         dispose();
 
     } catch (ClassNotFoundException | SQLException ex) {
-        Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
     }
 }
 

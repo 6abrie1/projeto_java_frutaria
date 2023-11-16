@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Cliente;
-import teste.TelaClientes;
+
 
 /**
  *
@@ -166,10 +166,10 @@ public class TelaCliente extends javax.swing.JFrame {
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 760, 630));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 840, 660));
 
         jPanel4.setBackground(new java.awt.Color(178, 218, 250));
 
@@ -304,9 +304,9 @@ if (linhaClicada != null) {
                 tc.setVisible(true);
                  
              } catch (ClassNotFoundException ex) {
-                 Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
              } catch (SQLException ex) {
-                 Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
              }}      
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -342,7 +342,7 @@ if (linhaClicada != null) {
                 dispose();
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
 }
 

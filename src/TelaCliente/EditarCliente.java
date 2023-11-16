@@ -370,7 +370,7 @@ public class EditarCliente extends javax.swing.JFrame {
 
         // Chamar método para cadastrar no banco usando DaoCliente
         DaoCliente daoClientes = new DaoCliente();
-        daoClientes.AtualizarProduto(clienteModificado);
+        daoClientes.AtualizarClinte(clienteModificado);
         daoClientes.fecharConexao();
 
         // Limpar campos após o cadastro

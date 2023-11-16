@@ -1,15 +1,9 @@
 package projeto_java;
 
-import model.Cliente;
-import TelaCliente.CadastroCliente;
-import TelaCliente.EditarCliente;
-import TelaProdutos.CadastrarProduto;
-import TelaProdutos.CadastrarProduto;
 import telas.Login;
-import telas.TelaCliente;
-import TelaProdutos.TelaProduto;
-import dao.DaoCliente;
+import dao.DaoProduto;
 import java.sql.SQLException;
+import model.Produto;
 
 
 public class Principal {
@@ -19,9 +13,7 @@ public class Principal {
         Login tela1 = new Login();
         tela1.setVisible(true);
         
-        Cliente c = new Cliente(10, "", "", "", "");
-        DaoCliente cd = new DaoCliente();
-        cd.AtualizarProduto(c);
+        
         
      
     }

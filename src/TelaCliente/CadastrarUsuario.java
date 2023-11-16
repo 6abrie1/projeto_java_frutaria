@@ -231,7 +231,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             } else {
                 DaoFuncinario funcionariodao = new DaoFuncinario();
                 
-                funcionariodao.fazercadstro(emailText, senhaText, senhaText,cargo);
+                funcionariodao.fazercadstro(emailText, nomeText, senhaText,cargo);
 
                 // Limpando campos após adicionar cliente
                 txtnome.setText("");

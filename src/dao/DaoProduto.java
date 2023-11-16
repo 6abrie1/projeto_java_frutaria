@@ -99,29 +99,33 @@ public class DaoProduto {
             return resultadoLista;
 }
      
-     public ArrayList<String> PesquisarProdutos(Produto produto) throws SQLException {
-        ArrayList<String> resultadoPesquisa = new ArrayList<>();
+     public ArrayList<Produto> PesquisarProdutos(Produto produto) throws SQLException {
+    ArrayList<Produto> resultadoPesquisa = new ArrayList<>();
 
-        String sql = "SELECT * FROM produtos WHERE `nome` = ? OR `categoria` = ?;";
+    String sql = "SELECT * FROM produtos WHERE `nome` = ? OR `categoria` = ?;";
 
-        try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
-            stmt.setString(1, produto.getNome());
-            stmt.setString(2, produto.getCategoria());
+    try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+        stmt.setString(1, produto.getNome());
+        stmt.setString(2, produto.getCategoria());
 
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    // Obtenha os resultados da pesquisa e adicione-os à lista
-                    String idProdutoString = rs.getString("id");
-                    String nomeProduto = rs.getString("nome");
-                    String categoriaProduto = rs.getString("categoria");
-                    resultadoPesquisa.add("\nID: "+ idProdutoString +"\nNome: " + nomeProduto + "\nCategoria: " + categoriaProduto);
-                }
+        try (ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                // Criar um novo objeto Produto com os dados do banco de dados
+                Produto produtoEncontrado = new Produto();
+                produtoEncontrado.setId(rs.getInt("id"));
+                produtoEncontrado.setNome(rs.getString("nome"));
+                produtoEncontrado.setCategoria(rs.getString("categoria"));
+
+                // Adicionar o produto encontrado à lista de resultados
+                resultadoPesquisa.add(produtoEncontrado);
             }
         }
-
-        conexao.close();
-        return resultadoPesquisa;
     }
+
+    conexao.close();
+    return resultadoPesquisa;
+}
+
      
     public void AtualizarProduto(Produto produto) throws ClassNotFoundException, SQLException {
     String sql = "UPDATE produtos SET nome = ?, categoria = ?, quantidade = ?, preco = ? WHERE id = ?";
@@ -163,6 +167,20 @@ public class DaoProduto {
 
         return produto;
     }
+    public String PesquisarID(String nome) throws ClassNotFoundException, SQLException {
+    String sql = "SELECT id FROM produtos WHERE nome = ?";
+
+    try(PreparedStatement stmt = conexao.prepareStatement(sql)){ 
+    stmt.setString(1, nome);
+    
+    ResultSet rs = stmt.executeQuery();
+    rs.next();
+    
+        String id =  rs.getString("id");
+
+   return id;
+   
+   }}
     
     public void fecharConexao() {
         try {

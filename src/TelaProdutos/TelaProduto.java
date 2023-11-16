@@ -5,9 +5,6 @@
 package TelaProdutos;
 
 import TelaCliente.CadastrarUsuario;
-import TelaProdutos.CadastrarProduto;
-import TelaProdutos.EditarProduto;
-import TelaProdutos.ModificadordeTabelaProdutos;
 import dao.DaoProduto;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -18,7 +15,7 @@ import telas.Login;
 import telas.TelaCliente;
 import TelaVendas.TelaVendas;
 import TelaPedidos.TelaPedidos;
-import teste.TelaClientes;
+
 
 /**
  *
@@ -310,9 +307,9 @@ public class TelaProduto extends javax.swing.JFrame {
                 
                 
              } catch (ClassNotFoundException ex) {
-                 Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
              } catch (SQLException ex) {
-                 Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
              }
     
     }
@@ -391,7 +388,7 @@ public class TelaProduto extends javax.swing.JFrame {
         dispose();
 
     } catch (ClassNotFoundException | SQLException ex) {
-        Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
     }
 }
 

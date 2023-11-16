@@ -18,7 +18,7 @@ import model.Produto;
 import telas.Login;
 import telas.TelaCliente;
 import TelaVendas.TelaVendas;
-import teste.TelaClientes;
+
 
 /**
  *
@@ -243,7 +243,7 @@ public class TelaPedidos extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(276, 276, 276)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,17 +265,13 @@ public class TelaPedidos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(6, 6, 6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
         );
 
         pack();
@@ -307,9 +303,9 @@ public class TelaPedidos extends javax.swing.JFrame {
                 
                 
              } catch (ClassNotFoundException ex) {
-                 Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
              } catch (SQLException ex) {
-                 Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                 Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
              }
     
     }
@@ -388,7 +384,7 @@ public class TelaPedidos extends javax.swing.JFrame {
         dispose();
 
     } catch (ClassNotFoundException | SQLException ex) {
-        Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(TelaCliente.class.getName()).log(Level.SEVERE, null, ex);
     }
 }
 

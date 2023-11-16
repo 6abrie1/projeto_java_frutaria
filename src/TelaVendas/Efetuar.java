@@ -5,8 +5,12 @@
 package TelaVendas;
 
 import TelaProdutos.*;
+import dao.DaoCliente;
 import dao.DaoProduto;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -18,12 +22,13 @@ import model.Produto;
  */
 public class Efetuar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastrarProduto2
-     */
+    private ArrayList<String> listaDeVenda;
+    private String produto;
     public Efetuar() {
         initComponents();
+        
     }
+ 
 
  
     @SuppressWarnings("unchecked")
@@ -40,7 +45,7 @@ public class Efetuar extends javax.swing.JFrame {
         Nome2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        Quantidade = new javax.swing.JTextField();
+        Produto = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         Preco = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -51,6 +56,8 @@ public class Efetuar extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        Preco3 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
 
         Categoria.setBackground(new java.awt.Color(221, 255, 255));
 
@@ -61,8 +68,10 @@ public class Efetuar extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(106, 158, 218));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nome Cliente");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -70,6 +79,11 @@ public class Efetuar extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         Nome2.setBackground(new java.awt.Color(221, 255, 255));
+        Nome2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Nome2FocusLost(evt);
+            }
+        });
         Nome2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Nome2ActionPerformed(evt);
@@ -86,11 +100,18 @@ public class Efetuar extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Quantidade");
 
-        Quantidade.setBackground(new java.awt.Color(221, 255, 255));
+        Produto.setBackground(new java.awt.Color(221, 255, 255));
+        Produto.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ProdutoFocusLost(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Preco");
 
         Preco.setBackground(new java.awt.Color(221, 255, 255));
@@ -110,6 +131,7 @@ public class Efetuar extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Produto");
 
         Preco2.setBackground(new java.awt.Color(221, 255, 255));
@@ -121,6 +143,7 @@ public class Efetuar extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(178, 218, 250));
         jButton3.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("+");
         jButton3.setToolTipText("");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -145,59 +168,74 @@ public class Efetuar extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Total = R$ 0,00");
 
-        jLabel1.setText("Data : ");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Data de entrega : ");
+
+        Preco3.setBackground(new java.awt.Color(221, 255, 255));
+        Preco3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Preco3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setBackground(new java.awt.Color(178, 218, 250));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton4.setText("Efetuar  Venda");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Nome2, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(14, 14, 14))
+                        .addGap(614, 614, 614)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addGap(164, 164, 164))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(Quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel12))
-                                                .addGap(48, 48, 48)
-                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(Preco, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel10))
-                                                .addGap(49, 49, 49))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jLabel7)
-                                                .addGap(163, 163, 163)
-                                                .addComponent(jLabel9)
-                                                .addGap(164, 164, 164)))
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Produto, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel12))
+                                        .addGap(48, 48, 48)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Preco, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel10))
+                                        .addGap(41, 41, 41)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel11)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addGap(49, 49, 49)
-                                                .addComponent(jButton2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jButton1))
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(Preco2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(14, 14, 14))))
-                                    .addComponent(jLabel8)
-                                    .addComponent(Nome2, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(Preco3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(133, 133, 133))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(Preco2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2)
+                                .addGap(29, 29, 29)
+                                .addComponent(jButton4)
+                                .addGap(52, 52, 52)))
+                        .addComponent(jButton1))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
                         .addComponent(jLabel1)
-                        .addGap(522, 522, 522)
-                        .addComponent(jLabel3)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addGap(466, 466, 466)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel8)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,29 +252,32 @@ public class Efetuar extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(3, 3, 3))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(Preco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)))
-                        .addComponent(jLabel9))
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Preco3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(3, 3, 3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2)
+                            .addComponent(jButton4)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Preco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(41, 41, 41))
         );
 
@@ -247,7 +288,29 @@ public class Efetuar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-   
+      try {
+    DaoProduto dao = new DaoProduto();
+    ArrayList<Produto> dadosDaVenda = dao.PesquisarProdutos(p);
+
+    ModificadordeTabelaVenda modelo = new ModificadordeTabelaVenda();
+    jTable1.setModel(modelo);
+
+    // Definindo as colunas
+    modelo.addColumn("ID");
+    modelo.addColumn("Nome");
+    modelo.addColumn("Categoria");
+
+    // Adicionando os dados dos produtos à tabela
+    for (Produto produto : dadosDaVenda) {
+        Object[] rowData = {produto.getId(), produto.getNome(), produto.getCategoria()};
+        modelo.addRow(rowData);
+    }
+
+} catch (ClassNotFoundException | SQLException ex) {
+    ex.printStackTrace();
+    // Trate ou registre o erro conforme necessário
+}
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void Preco2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Preco2ActionPerformed
@@ -269,42 +332,41 @@ public class Efetuar extends javax.swing.JFrame {
     }//GEN-LAST:event_PrecoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            String categoriaText = Categoria.getText();
-            String nomeText = Nome2.getText();
-            String precoText = Preco.getText();
-            String quantidadeText = Quantidade.getText();
-
-            // Verificação se os campo não estão vazios
-            if (nomeText.isEmpty() || categoriaText.isEmpty() || precoText.isEmpty() || quantidadeText.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos.");
-            } else {
-
-                try {
-                    double preco = Double.parseDouble(precoText);
-                    int quantidade = Integer.parseInt(quantidadeText);
-
-                    // Criação do objeto Produto
-                    Produto produto = new Produto(nomeText, preco, quantidade, categoriaText);
-
-                    // Adição do produto ao banco de dados
-                    DaoProduto produtodao = new DaoProduto();
-                    produtodao.AdiconarProdutos(produto);
-
-                } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, "Os campos de preço e quantidade devem ser números válidos.");
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Efetuar.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Efetuar.class.getName()).log(Level.SEVERE, null, ex);
-        }
+   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Nome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nome2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Nome2ActionPerformed
+
+    private void Preco3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Preco3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Preco3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        try {
+            DaoProduto dp = new DaoProduto();
+            DaoCliente dc = new DaoCliente();
+            
+            dp.PesquisarID(Nome2.getText());
+            dc.PesquisarID(Produto.getText());
+            
+            
+            
+                    }catch (ClassNotFoundException ex) {
+            Logger.getLogger(Efetuar.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Efetuar.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void ProdutoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ProdutoFocusLost
+       
+    }//GEN-LAST:event_ProdutoFocusLost
+
+    private void Nome2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Nome2FocusLost
+        // TODO add your handling c
+    }//GEN-LAST:event_Nome2FocusLost
 
     /**
      * @param args the command line arguments
@@ -353,10 +415,12 @@ public class Efetuar extends javax.swing.JFrame {
     private javax.swing.JTextField Nome2;
     private javax.swing.JTextField Preco;
     private javax.swing.JTextField Preco2;
-    private javax.swing.JTextField Quantidade;
+    private javax.swing.JTextField Preco3;
+    private javax.swing.JTextField Produto;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

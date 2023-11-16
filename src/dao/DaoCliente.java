@@ -156,7 +156,7 @@ public class DaoCliente {
 
         return null;
     }
-    public void AtualizarProduto(Cliente cliente) throws ClassNotFoundException, SQLException {
+    public void AtualizarClinte(Cliente cliente) throws ClassNotFoundException, SQLException {
     String sql = "UPDATE clientes SET nome = ?, email = ?, telefone = ?, endereco = ? WHERE id = ?";
 
     try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
@@ -171,6 +171,23 @@ public class DaoCliente {
 
     }
     }
+   public String PesquisarID(String nome) throws ClassNotFoundException, SQLException {
+    String sql = "SELECT id FROM clientes WHERE nome = ?";
+
+    try(PreparedStatement stmt = conexao.prepareStatement(sql)){ 
+    stmt.setString(1, nome);
+    
+    ResultSet rs = stmt.executeQuery();
+    rs.next();
+    
+        String id =  rs.getString("id");
+
+   return id;
+   
+   }
+    
+   }
+   
     public void fecharConexao() {
             try {
                 if (conexao != null && !conexao.isClosed()) {
