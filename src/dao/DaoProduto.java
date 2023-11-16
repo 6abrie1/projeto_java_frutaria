@@ -14,14 +14,14 @@ import projeto_java.Produto;
 
 public class DaoProduto {
    
-        private Connection conexao;
+    private Connection conexao;
 
     public DaoProduto() throws ClassNotFoundException, SQLException {
         Conexao com = new Conexao();
         conexao = com.getConexao();
     }
     
-     public boolean AdiconarProdutos(Produto produto){
+    public boolean AdiconarProdutos(Produto produto){
  
         boolean estado = false;
         String sql = "INSERT INTO `produtos` (`nome`, `categoria`, `quantidade`,`preco`) VALUES (?, ?, ?,?)";
@@ -48,35 +48,31 @@ public class DaoProduto {
         return estado;
     }
      
-     
-     
-     public boolean RemoverProdutos(Produto produto){
+    public boolean RemoverProdutos(Produto produto){
  
-            boolean estado = false;
+        boolean estado = false;
         String sql = "DELETE FROM produtos WHERE `id` = ? ;";
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             
-            stmt.setInt(1,produto.getId() );
-           
+                    stmt.setInt(1,produto.getId() );
             
-            int linhasAfetadas = stmt.executeUpdate();
-    
-    if (linhasAfetadas > 0) {
-        System.out.println("Removido com bem-sucedida.");
-        estado = true ;
-        stmt.close();
-    } else {
-        System.out.println("Nenhuma linha afetada.");
-    }
+                    int linhasAfetadas = stmt.executeUpdate();
+
+                    if (linhasAfetadas > 0) {
+                            System.out.println("Removido com bem-sucedida.");
+                            estado = true ;
+                            stmt.close();
+                    } else {
+                            System.out.println("Nenhuma linha afetada.");
+                    }
         } catch (SQLException ex) {
             Logger.getLogger(DaoLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return estado;
     }
-     
-     
+    
     public ArrayList<Produto> ListaProdutos() {
          ArrayList<Produto> resultadoLista = new ArrayList<>();
          String sql = "SELECT * FROM produtos;";
@@ -103,10 +99,6 @@ public class DaoProduto {
             return resultadoLista;
 }
      
-     
-     
-     
-     
      public ArrayList<String> PesquisarProdutos(Produto produto) throws SQLException {
         ArrayList<String> resultadoPesquisa = new ArrayList<>();
 
@@ -130,6 +122,7 @@ public class DaoProduto {
         conexao.close();
         return resultadoPesquisa;
     }
+     
     public void AtualizarProduto(Produto produto) throws ClassNotFoundException, SQLException {
     String sql = "UPDATE produtos SET nome = ?, categoria = ?, quantidade = ?, preco = ? WHERE id = ?";
 
@@ -145,6 +138,7 @@ public class DaoProduto {
 
     }
 }
+    
     public Produto obterProdutoPorId(int id) throws ClassNotFoundException, SQLException {
         Produto produto = null;
         String sql = "SELECT * FROM produtos WHERE id = ?";
@@ -169,7 +163,8 @@ public class DaoProduto {
 
         return produto;
     }
-      public void fecharConexao() {
+    
+    public void fecharConexao() {
         try {
             if (conexao != null && !conexao.isClosed()) {
                 conexao.close();

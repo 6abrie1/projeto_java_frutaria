@@ -6,11 +6,9 @@ public class Cliente {
     private int id;
     private String nome, telefone, email;
     private List<Endereco> enderecos;
-
     
     public Cliente() {
     }
-
 
     public Cliente(int id, String nome, String telefone, String email, List<Endereco> enderecos) {
         this.id = id;
@@ -19,7 +17,6 @@ public class Cliente {
         this.email = email;
         this.enderecos = enderecos;
     }
-
 
     public int getId() {
         return id;
@@ -51,7 +48,5 @@ public class Cliente {
     public void setEndereco(List<Endereco> enderecos) {
         this.enderecos = enderecos;
     }
-    
-
     
 }

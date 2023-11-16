@@ -16,16 +16,11 @@ public class Principal {
         tela1.setVisible(true);
         
         
-        
-       
-        
-    
-}
-       
-       
-        
-       
-        
-         
     }
+       
+       
+        
+       
+        
+}
 

@@ -8,9 +8,7 @@ public class Funcionario {
     private String senha;
 
     public void cadastrarProduto(Produto produto){
-
         // TODO: implementar logica de cadastrar Produto no banco.
-
     }
 
     public void efetuarVenda(Venda venda){
