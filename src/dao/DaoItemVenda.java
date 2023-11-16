@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-import model.ItemVenda;
+import model.IntePv;
 
 
 
@@ -21,7 +21,7 @@ public class DaoItemVenda {
         conexao = com.getConexao();
     }
 
-    public boolean AdicionarItemVenda(ItemVenda itemVenda){
+    public boolean AdicionarItemVenda(IntePv itemVenda){
         boolean estado = false;
         String sql = "INSERT INTO `item_venda` (`quantidade`, `valor_unitario`, `produto_id`, `venda_id`) VALUES (?,?,?,?)";
 

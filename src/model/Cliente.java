@@ -1,52 +1,75 @@
 package model;
 
-import java.util.List;
-
+/**
+ * Classe que representa um cliente.
+ * 
+ * @author gabri
+ */
 public class Cliente {
     private int id;
-    private String nome, telefone, email;
-    private List<Endereco> enderecos;
-    
-    public Cliente() {
+    private String nome, email, telefone;
+    private String endereco;  
+
+    // Construtor para criar um cliente com endereço
+    public Cliente(String nome, String email, String telefone, String endereco) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.endereco = endereco;
     }
 
-    public Cliente(int id, String nome, String telefone, String email, List<Endereco> enderecos) {
+    public Cliente(int id, String nome, String email, String telefone, String endereco) {
         this.id = id;
         this.nome = nome;
-        this.telefone = telefone;
         this.email = email;
-        this.enderecos = enderecos;
+        this.telefone = telefone;
+        this.endereco = endereco;
     }
+
+    // Construtor para criar um cliente com ID
+    public Cliente(int id) {
+        this.id = id;
+    }
+
+    // Métodos getters e setters para acessar e modificar os atributos
 
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getTelefone() {
-        return telefone;
-    }
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
-    public List<Endereco> getEndereco() {
-        return enderecos;
+
+    public String getTelefone() {
+        return telefone;
     }
-    public void setEndereco(List<Endereco> enderecos) {
-        this.enderecos = enderecos;
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
-    
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 }

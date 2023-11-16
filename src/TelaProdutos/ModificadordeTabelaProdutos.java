@@ -2,7 +2,7 @@ package TelaProdutos;
 
 import dao.DaoProduto;
 import java.sql.SQLException;
-import projeto_java.Produto;
+import model.Produto;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 

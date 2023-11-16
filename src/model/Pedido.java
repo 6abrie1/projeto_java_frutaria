@@ -4,29 +4,56 @@ import java.util.List;
 
 
 
-public class Pedido extends Venda{
+public class Pedido {
+ 
+private int  id_vendas;
+private int  id_pedidos;
+private String status;
+private String data_da_entregar;
 
-    private Date dataEntrega;
-    private Endereco enderecoDeEntrega;
-    private String statusEntrega;
-
-    
-
-
-    public Pedido() {
+    public Pedido(int id_vendas, int id_pedidos, String status, String data_da_entregar) {
+        this.id_vendas = id_vendas;
+        this.id_pedidos = id_pedidos;
+        this.status = status;
+        this.data_da_entregar = data_da_entregar;
     }
 
-    public Pedido(int id, List<ItemVenda> listaItem, Cliente cliente, Date dataVenda, Double total,
-            Funcionario vendedor, String status, Date dataEntrega, Endereco enderecoDeEntrega, String statusEntrega) {
-
-        super(id, listaItem, cliente, dataVenda, total, vendedor, status);
 
 
-        this.dataEntrega = dataEntrega;
-        this.enderecoDeEntrega = enderecoDeEntrega;
-        this.statusEntrega = statusEntrega;
+    public int getId_vendas() {
+        return id_vendas;
     }
 
+    public void setId_vendas(int id_vendas) {
+        this.id_vendas = id_vendas;
+    }
+
+    public int getId_pedidos() {
+        return id_pedidos;
+    }
+
+    public void setId_pedidos(int id_pedidos) {
+        this.id_pedidos = id_pedidos;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getData_da_entregar() {
+        return data_da_entregar;
+    }
+
+    public void setData_da_entregar(String data_da_entregar) {
+        this.data_da_entregar = data_da_entregar;
+    }
+
+
+   
     
     
 }

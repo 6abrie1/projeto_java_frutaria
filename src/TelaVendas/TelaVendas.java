@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import projeto_java.Produto;
+import model.Produto;
 import telas.Login;
 import telas.TelaCliente;
 //import telas.TelaVendas;

@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import projeto_java.Cliente;
-import projeto_java.Produto;
+import model.Cliente;
+import model.Produto;
 
 
 public class DaoProduto {

@@ -1,5 +1,6 @@
 package projeto_java;
 
+import model.Cliente;
 import TelaCliente.CadastroCliente;
 import TelaCliente.EditarCliente;
 import TelaProdutos.CadastrarProduto;

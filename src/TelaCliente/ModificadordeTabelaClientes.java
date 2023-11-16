@@ -2,7 +2,7 @@ package TelaCliente;
 
 
 import java.sql.SQLException;
-import projeto_java.Cliente;
+import model.Cliente;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 

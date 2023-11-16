@@ -13,7 +13,7 @@ package teste;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
-import projeto_java.Produto;
+import model.Produto;
 
 public class ModificadordeTabelaVendas extends AbstractTableModel {
 
