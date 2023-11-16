@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import projeto_java.Cliente;
 import projeto_java.Endereco;
+import projeto_java.Produto;
 
 
 public class DaoCliente {
@@ -26,17 +27,6 @@ public class DaoCliente {
             conexao = com.getConexao();
         }
 
-    public byte[] converterParaBytes(Endereco endereco) {
-
-            try (ByteArrayOutputStream bos = new ByteArrayOutputStream();
-                 ObjectOutputStream oos = new ObjectOutputStream(bos)) {
-                oos.writeObject(endereco);
-                return bos.toByteArray();
-            } catch (IOException ex) {
-                Logger.getLogger(DaoCliente.class.getName()).log(Level.SEVERE, "Erro ao converter para bytes", ex);
-            }
-            return null;
-    }
 
     public boolean AdicionarCliente(Cliente cliente) {
             boolean estado = false;
@@ -166,7 +156,21 @@ public class DaoCliente {
 
         return null;
     }
+    public void AtualizarProduto(Cliente cliente) throws ClassNotFoundException, SQLException {
+    String sql = "UPDATE clientes SET nome = ?, email = ?, telefone = ?, endereco = ? WHERE id = ?";
 
+    try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
+        stmt.setString(1, cliente.getNome());
+        stmt.setString(2, cliente.getEmail());
+        stmt.setString(3, cliente.getTelefone());
+        stmt.setString(4, cliente.getEndereco());
+        stmt.setInt(5, cliente.getId());
+
+      int linhasAfetadas = stmt.executeUpdate();
+      System.out.println("Linhas afetadas: " + linhasAfetadas);
+
+    }
+    }
     public void fecharConexao() {
             try {
                 if (conexao != null && !conexao.isClosed()) {

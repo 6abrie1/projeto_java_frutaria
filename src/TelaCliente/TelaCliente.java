@@ -9,6 +9,7 @@ import TelaCliente.CadastroCliente;
 import TelaCliente.EditarCliente;
 import TelaCliente.ModificadordeTabelaClientes;
 import TelaPedidos.TelaPedidos;
+import TelaProdutos.EditarProduto;
 import TelaProdutos.TelaProduto;
 import dao.DaoCliente;
 import java.sql.SQLException;
@@ -319,27 +320,30 @@ if (linhaClicada != null) {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
        if (linhaClicada != null) {
-    try {
-        String[] linhaClicadaSplit = linhaClicada.split("\n");
-        Cliente cliente = new Cliente(0);
-        cliente.setId(Integer.parseInt(linhaClicadaSplit[0].split(": ")[1]));
+            try {
+                String[] linhaClicadaSplit = linhaClicada.split("\n");
+                Cliente cliente = new Cliente(0);
+                cliente.setId(Integer.parseInt(linhaClicadaSplit[0].split(": ")[1]));
+//
+                // Recupere os detalhes do cliente do banco de dados com base no ID
+                DaoCliente clienteDao = new DaoCliente();
+                cliente = clienteDao.obterClientePorId(cliente.getId());
+                System.out.println(cliente.getId());
+                clienteDao.fecharConexao();
 
-        // Recupere os detalhes do cliente do banco de dados com base no ID
-        DaoCliente clienteDao = new DaoCliente();
-        cliente = clienteDao.obterClientePorId(cliente.getId());
-        clienteDao.fecharConexao();
+                // Abre a tela de edição com os detalhes do cliente
+                
+                EditarCliente editarCliente = new EditarCliente(cliente);
+                editarCliente.setVisible(true);
+          
 
-        // Abre a tela de edição com os detalhes do cliente
-        EditarCliente editarCliente = new EditarCliente(cliente);
-        editarCliente.setVisible(true);
+                // Fecha a tela atual
+                setVisible(false);
+                dispose();
 
-        // Fecha a tela atual
-        setVisible(false);
-        dispose();
-
-    } catch (ClassNotFoundException | SQLException ex) {
-        Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
-    }
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(TelaClientes.class.getName()).log(Level.SEVERE, null, ex);
+            }
 }
 
     }//GEN-LAST:event_jButton7ActionPerformed

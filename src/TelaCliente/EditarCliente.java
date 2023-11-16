@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import projeto_java.Cliente;
 import projeto_java.Endereco;
+import projeto_java.Produto;
 import telas.TelaCliente;
 
 /**
@@ -355,30 +356,21 @@ public class EditarCliente extends javax.swing.JFrame {
 
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
     try {
-    String nomeCliente = Nome.getText();
-    String telefoneCliente = Telefone.getText();
-    String emailCliente = Email.getText();
-    String ruaEndereco = Rua.getText();
-    String numeroEndereco = Numero.getText();
-    String bairroEndereco = Bairro.getText();
-    String cepEndereco = Cep.getText();
-    String complementoEndereco = Complemento.getText();
+   Cliente clienteModificado = getClienteModificado();
 
     // Verificar se algum dos campos obrigatórios está vazio
-    if (nomeCliente.isEmpty() || telefoneCliente.isEmpty() || emailCliente.isEmpty() ||
-        ruaEndereco.isEmpty() || numeroEndereco.isEmpty() || bairroEndereco.isEmpty() ||
-        cepEndereco.isEmpty() || complementoEndereco.isEmpty()) {
-        // Exibir mensagem de erro ou fazer algo apropriado
+    if (clienteModificado.getNome().isEmpty() || clienteModificado.getEmail().isEmpty() ) {
+        // Exibir mensagem de erro ou fazer algo eapropriado
         JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos obrigatórios.");
     } else {
-        String enderecoCompleto = ruaEndereco + ", " + numeroEndereco + ", " + bairroEndereco + ", " + cepEndereco + ", " + complementoEndereco;
+//        String enderecoCompleto = clienteModificado.ge + ", " + numeroEndereco + ", " + bairroEndereco + ", " + cepEndereco + ", " + complementoEndereco;
 
         // Criar objeto Cliente
-        Cliente novoCliente = new Cliente(nomeCliente, emailCliente, telefoneCliente, enderecoCompleto);
+        //Cliente novoCliente = new Cliente(clienteModificado.getNome(), clienteModificado.getEmail(), clienteModificado.getTelefone(), clienteModificado.getEndereco());
 
         // Chamar método para cadastrar no banco usando DaoCliente
         DaoCliente daoClientes = new DaoCliente();
-        daoClientes.AdicionarCliente(novoCliente);
+        daoClientes.AtualizarProduto(clienteModificado);
         daoClientes.fecharConexao();
 
         // Limpar campos após o cadastro
@@ -401,6 +393,7 @@ private void limparCampos() {
     Rua.setText("");
     Numero.setText("");
     Bairro.setText("");
+    Email.setText("");
     Cep.setText("");
     Complemento.setText("");
 }
