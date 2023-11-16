@@ -288,28 +288,7 @@ public class Efetuar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      try {
-    DaoProduto dao = new DaoProduto();
-    ArrayList<Produto> dadosDaVenda = dao.PesquisarProdutos(p);
-
-    ModificadordeTabelaVenda modelo = new ModificadordeTabelaVenda();
-    jTable1.setModel(modelo);
-
-    // Definindo as colunas
-    modelo.addColumn("ID");
-    modelo.addColumn("Nome");
-    modelo.addColumn("Categoria");
-
-    // Adicionando os dados dos produtos à tabela
-    for (Produto produto : dadosDaVenda) {
-        Object[] rowData = {produto.getId(), produto.getNome(), produto.getCategoria()};
-        modelo.addRow(rowData);
-    }
-
-} catch (ClassNotFoundException | SQLException ex) {
-    ex.printStackTrace();
-    // Trate ou registre o erro conforme necessário
-}
+    
 
     }//GEN-LAST:event_jButton3ActionPerformed
 

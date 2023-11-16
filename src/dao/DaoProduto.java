@@ -111,11 +111,11 @@ public class DaoProduto {
         try (ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
                 // Criar um novo objeto Produto com os dados do banco de dados
-                Produto produtoEncontrado = new Produto();
-                produtoEncontrado.setId(rs.getInt("id"));
-                produtoEncontrado.setNome(rs.getString("nome"));
-                produtoEncontrado.setCategoria(rs.getString("categoria"));
-
+               
+              int id =  rs.getInt("id");
+              String  nome = rs.getString("nome");
+              String categoria = rs.getString("categoria");
+              Produto produtoEncontrado = new Produto(nome, 0, 0, categoria);
                 // Adicionar o produto encontrado à lista de resultados
                 resultadoPesquisa.add(produtoEncontrado);
             }
