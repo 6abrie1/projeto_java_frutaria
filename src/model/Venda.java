@@ -8,8 +8,8 @@ public class Venda {
     private Cliente cliente;
     private Date dataVenda;
     private Double total;
-    private Funcionario vendedor;
-    private String status;
+    
+ 
 
 
     public Venda() {
@@ -22,8 +22,7 @@ public class Venda {
         this.cliente = cliente;
         this.dataVenda = dataVenda;
         this.total = total;
-        this.vendedor = vendedor;
-        this.status = status;
+//   
     }
 
 
@@ -77,23 +76,7 @@ public class Venda {
     }
 
 
-    public Funcionario getVendedor() {
-        return vendedor;
-    }
-
-
-    public void setVendedor(Funcionario vendedor) {
-        this.vendedor = vendedor;
-    }
-
-
-    public String getStatus() {
-        return status;
-    }
-
-
-    public void setStatus(String status) {
-        this.status = status;
+  
     }
 
     
@@ -104,4 +87,4 @@ public class Venda {
     
 
     
-}
+
