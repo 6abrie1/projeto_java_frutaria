@@ -9,6 +9,7 @@ import TelaPedidos.TelaPedidos;
 import TelaProdutos.EditarProduto;
 import TelaProdutos.ModificadordeTabelaProdutos;
 import TelaProdutos.TelaProduto;
+import dao.DaoIntePv;
 import dao.DaoProduto;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import telas.TelaCliente;
 public class TelaVendas extends javax.swing.JFrame {
 
      private  String linhaClicada;
-     private ArrayList<Produto> listaDeProdutos; // Preencha esta lista com os produtos do banco de dados
+     private ArrayList<Produto> listaDeProdutos;  // Preencha esta lista com os produtos do banco de dados
      
     public TelaVendas() {
         initComponents();
@@ -37,16 +38,18 @@ public class TelaVendas extends javax.swing.JFrame {
      private void carregarProdutos() {
        
         try {
-            DaoProduto dao = new DaoProduto();
-            listaDeProdutos = dao.ListaProdutos();
+            DaoIntePv dao = new DaoIntePv();
+            listaDeProdutos = dao.ListaIntePv();
             dao.fecharConexao();
         } catch (ClassNotFoundException | SQLException ex) {
             ex.printStackTrace();
         }
 
-        ModificadordeTabelaProdutos modelo = new ModificadordeTabelaProdutos(listaDeProdutos);
+         ModificadordeTabelaProdutos modelo = new ModificadordeTabelaProdutos(listaDeProdutos);
         jTable1.setModel(modelo);
     }
+     
+     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -351,21 +354,21 @@ public class TelaVendas extends javax.swing.JFrame {
 
     private void CDTFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDTFuncionarioActionPerformed
 
-    Login l = new Login();
-   if( l.getCargo().equals("Admistrador")){
-      
-    CDTFuncionario.setEnabled(true);
-    
-     setVisible(false);
-     dispose();
-     
-    CadastrarUsuario CDTTela = new CadastrarUsuario();
-        CDTTela.setVisible(true);
-   }else{
-   
-   CDTFuncionario.setEnabled(false);
-       
-   }
+            Login l = new Login();
+           if( l.getCargo().equals("Admistrador")){
+
+            CDTFuncionario.setEnabled(true);
+
+             setVisible(false);
+             dispose();
+
+            CadastrarUsuario CDTTela = new CadastrarUsuario();
+                CDTTela.setVisible(true);
+           }else{
+
+           CDTFuncionario.setEnabled(false);
+
+           }
     }//GEN-LAST:event_CDTFuncionarioActionPerformed
 
     private void VendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VendasActionPerformed

@@ -212,7 +212,7 @@ public class EditarCliente extends javax.swing.JFrame {
         Cadastrar.setBackground(new java.awt.Color(236, 236, 236));
         Cadastrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Cadastrar.setForeground(new java.awt.Color(0, 0, 0));
-        Cadastrar.setText("CADASTRAR");
+        Cadastrar.setText("EDITAR");
         Cadastrar.setBorder(null);
         Cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

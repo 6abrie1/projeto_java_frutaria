@@ -34,6 +34,7 @@ public class DaoLogin {
         
         return estado;
     }
+    
     public Integer obterIdUsuario(String usuario, String senha) {
     Integer idUsuario = null;
     String sql = "SELECT id FROM credencial WHERE usuario = ? AND senha = ?";
@@ -53,6 +54,7 @@ public class DaoLogin {
 
     return idUsuario;
 }
+    
     public String obterCargoUsuario(String usuario, String senha) {
     String cargo = null;
     String sql = "SELECT cargo FROM credencial WHERE usuario = ? AND senha = ?";
@@ -72,6 +74,7 @@ public class DaoLogin {
 
     return cargo;
 }
+    
     public void fecharConexao() {
         try {
             if (conexao != null && !conexao.isClosed()) {

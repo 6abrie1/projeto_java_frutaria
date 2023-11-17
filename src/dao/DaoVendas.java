@@ -17,7 +17,8 @@ public class DaoVendas {
         Conexao con = new Conexao();
         conexao = con.getConexao();
     }
-public boolean AdiconarProdutos(Venda venda){
+    
+    public boolean AdiconarProdutos(Venda venda){
  
         boolean estado = false;
         String sql = "INSERT INTO `produtos` (`nome`, `categoria`, `quantidade`,`preco`) VALUES (?, ?, ?,?)";

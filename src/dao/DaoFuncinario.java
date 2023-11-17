@@ -14,13 +14,12 @@ import java.util.logging.Logger;
 
 public class DaoFuncinario {
  
-     private Connection conexao;
+    private Connection conexao;
     
     public DaoFuncinario() throws ClassNotFoundException, SQLException {
         Conexao com = new Conexao();
         conexao = com.getConexao();
     }
-    
     
     public boolean fazercadstro(String email,String usuario,String senha,String cargo){
  
@@ -50,7 +49,7 @@ public class DaoFuncinario {
         return estado;
     }
     
-     public void fecharConexao() {
+    public void fecharConexao() {
         try {
             if (conexao != null && !conexao.isClosed()) {
                 conexao.close();

@@ -2,13 +2,19 @@ package TelaVendas;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
+import model.IntePv;
+import model.Produto;
 
 public class ModificadordeTabelaVenda extends AbstractTableModel {
-    private String[] colunas = {"ID", "NOME", "CATEGORIA"};
-    private ArrayList<String[]> dados;
+    private String[] colunas = {"ID", "CLIENTE", "NOME", "DATA DA VENDA", "PRECO", "QUANTIDADE"};
+    private ArrayList<IntePv> dados;
 
-    public ModificadordeTabelaVenda(ArrayList<String[]> dados) {
-        this.dados = dados;
+    public ModificadordeTabelaVenda(ArrayList<IntePv> dado) {
+        this.dados = dado;
+    }
+
+    ModificadordeTabelaVenda(ArrayList<Produto> listaDeProdutos) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
@@ -23,8 +29,8 @@ public class ModificadordeTabelaVenda extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        String[] linha = dados.get(rowIndex);
-        return linha[columnIndex];
+        IntePv linha = dados.get(rowIndex);
+        return linha;
     }
 
     @Override
@@ -33,8 +39,8 @@ public class ModificadordeTabelaVenda extends AbstractTableModel {
     }
 
     // Método personalizado para adicionar uma nova linha à tabela
-    public void addRow(String[] row) {
-        dados.add(row);
-        fireTableRowsInserted(getRowCount() - 1, getRowCount() - 1);
-    }
+//    public void addRow(String[] row) {
+//        dados.add(row);
+//        fireTableRowsInserted(getRowCount() - 1, getRowCount() - 1);
+//    }
 }

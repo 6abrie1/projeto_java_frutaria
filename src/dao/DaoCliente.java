@@ -156,6 +156,7 @@ public class DaoCliente {
 
         return null;
     }
+    
     public void AtualizarClinte(Cliente cliente) throws ClassNotFoundException, SQLException {
     String sql = "UPDATE clientes SET nome = ?, email = ?, telefone = ?, endereco = ? WHERE id = ?";
 
@@ -171,7 +172,8 @@ public class DaoCliente {
 
     }
     }
-   public String PesquisarID(String nome) throws ClassNotFoundException, SQLException {
+    
+    public String PesquisarID(String nome) throws ClassNotFoundException, SQLException {
     String sql = "SELECT id FROM clientes WHERE nome = ?";
 
     try(PreparedStatement stmt = conexao.prepareStatement(sql)){ 

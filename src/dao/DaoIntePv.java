@@ -12,11 +12,11 @@ import model.Cliente;
 import model.Produto;
 
 
-public class DaoProduto {
+public class DaoIntePv {
    
     private Connection conexao;
 
-    public DaoProduto() throws ClassNotFoundException, SQLException {
+    public DaoIntePv() throws ClassNotFoundException, SQLException {
         Conexao com = new Conexao();
         conexao = com.getConexao();
     }
@@ -73,24 +73,28 @@ public class DaoProduto {
         return estado;
     }
     
-    public ArrayList<Produto> ListaProdutos() {
+    public ArrayList<Produto> ListaIntePv() {
          ArrayList<Produto> resultadoLista = new ArrayList<>();
-         String sql = "SELECT * FROM produtos;";
+         
+         String sql = "select i.Id, v.id, c.nome, p.nome, v.data_venda, p.preco, i.quantidade  from intePV i \n" +
+"INNER JOIN vendas v on v.id = i.id_vendas\n" +
+"INNER JOIN produtos p on p.id = i.id_produtos\n" +
+"INNER JOIN clientes c on c.id = v.fk_cliente;";
 
      try (PreparedStatement stmt = conexao.prepareStatement(sql);
          ResultSet resultado = stmt.executeQuery()) {
 
         while (resultado.next()) {
-            int id = resultado.getInt("id");
-            String nome = resultado.getString("nome");
-            double preco = resultado.getDouble("preco");
-            int quantidade = resultado.getInt("quantidade");
-            String categoria = resultado.getString("categoria");
+            int id = resultado.getInt("i.id");
+            String nome = resultado.getString("p.nome");
+            double preco = resultado.getDouble("p.preco");
+            int quantidade = resultado.getInt("i.quantidade");
+            String cliente = resultado.getString("c.nome");
             
             // Recupere os valores restantes das colunas que você precisa da tabela.
 
     
-            Produto produto = new Produto(id, nome, preco, quantidade, categoria);
+            Produto produto = new Produto(id, nome, preco, quantidade, cliente);
             resultadoLista.add(produto);
         }
     } catch (SQLException ex) {
