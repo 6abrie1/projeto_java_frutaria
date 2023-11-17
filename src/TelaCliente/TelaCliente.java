@@ -11,6 +11,7 @@ import TelaCliente.ModificadordeTabelaClientes;
 import TelaPedidos.TelaPedidos;
 import TelaProdutos.EditarProduto;
 import TelaProdutos.TelaProduto;
+import TelaVendas.TelaVendas;
 import dao.DaoCliente;
 import java.sql.SQLException;
 import java.util.ArrayList;

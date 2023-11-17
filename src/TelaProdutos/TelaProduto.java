@@ -274,7 +274,9 @@ public class TelaProduto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProdutosActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        dispose();
+        setVisible(true);
     }//GEN-LAST:event_ProdutosActionPerformed
 
     private void AdcionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdcionarActionPerformed

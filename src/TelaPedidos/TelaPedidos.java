@@ -279,7 +279,12 @@ public class TelaPedidos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProdutosActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        dispose();
+        TelaProduto tp = new TelaProduto();
+        tp.setVisible(true);
+     
+     
     }//GEN-LAST:event_ProdutosActionPerformed
 
     private void RemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverActionPerformed
@@ -398,7 +403,10 @@ public class TelaPedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_ClientesActionPerformed
 
     private void PedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PedidosActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        dispose();
+        TelaPedidos tp = new TelaPedidos();
+        tp.setVisible(true);
     }//GEN-LAST:event_PedidosActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
