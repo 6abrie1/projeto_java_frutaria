@@ -1,5 +1,6 @@
 package projeto_java;
 
+import dao.DaoIntePv;
 import telas.Login;
 import dao.DaoProduto;
 import java.sql.SQLException;
@@ -13,7 +14,8 @@ public class Principal {
         Login tela1 = new Login();
         tela1.setVisible(true);
         
-        
+        DaoIntePv pv = new DaoIntePv();
+        System.out.println( pv.ListaIntePv());
         
      
     }

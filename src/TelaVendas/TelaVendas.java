@@ -45,7 +45,7 @@ public class TelaVendas extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
-         ModificadordeTabelaProdutos modelo = new ModificadordeTabelaProdutos(listaDeProdutos);
+         ModificadordeTabelaVenda modelo = new ModificadordeTabelaVenda(listaDeProdutos);
         jTable1.setModel(modelo);
     }
      

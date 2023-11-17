@@ -1,6 +1,7 @@
 
 package dao;
 
+import TelaVendas.ModificadordeTabelaVenda;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -73,35 +74,42 @@ public class DaoIntePv {
         return estado;
     }
     
-    public ArrayList<Produto> ListaIntePv() {
-         ArrayList<Produto> resultadoLista = new ArrayList<>();
-         
-         String sql = "select i.Id, v.id, c.nome, p.nome, v.data_venda, p.preco, i.quantidade  from intePV i \n" +
+    public ModificadordeTabelaVenda ListaIntePvParaTabela() {
+    ArrayList<Produto> resultadoLista = ListaIntePv();
+
+    // Crie uma instância de ModificadordeTabelaVenda e passe a lista para o construtor
+    ModificadordeTabelaVenda modificador = new ModificadordeTabelaVenda(resultadoLista);
+    return modificador;
+}
+
+public ArrayList<Produto> ListaIntePv() {
+    ArrayList<Produto> resultadoLista = new ArrayList<>();
+    
+    String sql = "select i.Id, v.id, c.nome, p.nome, v.data_venda, p.preco  from intePV i \n" +
 "INNER JOIN vendas v on v.id = i.id_vendas\n" +
 "INNER JOIN produtos p on p.id = i.id_produtos\n" +
 "INNER JOIN clientes c on c.id = v.fk_cliente;";
 
-     try (PreparedStatement stmt = conexao.prepareStatement(sql);
+    try (PreparedStatement stmt = conexao.prepareStatement(sql);
          ResultSet resultado = stmt.executeQuery()) {
 
         while (resultado.next()) {
-            int id = resultado.getInt("i.id");
-            String nome = resultado.getString("p.nome");
+            int id = resultado.getInt("i.Id");
+            String nomeProduto = resultado.getString("p.nome");
             double preco = resultado.getDouble("p.preco");
-            int quantidade = resultado.getInt("i.quantidade");
-            String cliente = resultado.getString("c.nome");
+            int quantidade = resultado.getInt("i.id");
+            String nomeCliente = resultado.getString("c.nome");
             
-            // Recupere os valores restantes das colunas que você precisa da tabela.
-
-    
-            Produto produto = new Produto(id, nome, preco, quantidade, cliente);
+            Produto produto = new Produto(id, nomeProduto, preco, quantidade, nomeCliente);
             resultadoLista.add(produto);
         }
     } catch (SQLException ex) {
         Logger.getLogger(DaoLogin.class.getName()).log(Level.SEVERE, null, ex);
     }
-            return resultadoLista;
+    
+    return resultadoLista;
 }
+
      
      public ArrayList<Produto> PesquisarProdutos(Produto produto) throws SQLException {
     ArrayList<Produto> resultadoPesquisa = new ArrayList<>();
